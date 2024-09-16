@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Umair Ali - Python Developer, Data Science Expert, and PhD Scholar in Computer Vision">
+    <title>Umair Ali - Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .fade-in-visible {
+            opacity: 1;
+        }
+        .skill-bar {
+            background-color: #e0e0e0;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .skill-bar-fill {
+            height: 20px;
+            background-color: #4a90e2;
+            border-radius: 20px;
+            text-align: right;
+            color: white;
+            padding-right: 10px;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans">
+
+    <!-- Navbar -->
+    <nav class="w-full bg-blue-900 shadow-lg fixed z-10">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-white text-2xl font-bold">Umair Ali</h1>
+            <ul class="flex space-x-4">
+                <li><a href="#about" class="text-white hover:text-gray-300">About</a></li>
+                <li><a href="#experience" class="text-white hover:text-gray-300">Experience</a></li>
+                <li><a href="#education" class="text-white hover:text-gray-300">Education</a></li>
+                <li><a href="#certifications" class="text-white hover:text-gray-300">Certifications</a></li>
+                <li><a href="#contact" class="text-white hover:text-gray-300">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center bg-blue-900 text-white">
+        <div class="text-center">
+            <h1 class="text-5xl font-bold">Umair Ali</h1>
+            <p class="text-xl mt-4">Python Developer | Data Scientist | PhD Scholar in Computer Vision</p>
+            <a href="#about" class="mt-8 inline-block bg-white text-blue-900 px-6 py-3 rounded-full hover:bg-gray-200">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container mx-auto px-4 py-16 fade-in">
+        <h2 class="text-4xl font-bold text-center mb-8">About Me</h2>
+        <p class="mt-6 text-center text-lg">I am currently pursuing a PhD in Electrical Engineering with a focus on <strong>Computer Vision</strong> tasks. I have extensive experience in Python programming, machine learning projects, and tutoring students in Python from basic to advanced levels.</p>
+        <p class="mt-4 text-center text-lg">As a freelancer and tutor, I have worked on over 60 projects, helping clients and students with data analysis, machine learning, and web development. Visit my website: <a href="https://darecoding.com" class="text-blue-900 underline hover:text-blue-700">darecoding.com</a>.</p>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="container mx-auto px-4 py-16 bg-gray-200 fade-in">
+        <h2 class="text-4xl font-bold text-center mb-8">Experience</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h3 class="text-2xl font-bold">Tutor and Freelancer for Python</h3>
+                <p>Preply and Fiverr</p>
+                <p>I provide Python consultancy and tutoring services, from basic programming to advanced projects like data science and machine learning.</p>
+            </div>
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h3 class="text-2xl font-bold">Associate Engineer</h3>
+                <p>Mezino Technologies (2021-2022)</p>
+                <ul class="list-disc list-inside">
+                    <li>Embedded systems for bidirectional communication and HMI control</li>
+                    <li>Web scraping for machine learning models</li>
+                    <li>Django and Next.js for web development</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="container mx-auto px-4 py-16 fade-in">
+        <h2 class="text-4xl font-bold text-center mb-8">Education</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h3 class="text-2xl font-bold">PhD in Electrical Engineering (Computer Vision)</h3>
+                <p>University of Gujrat (2024-2027)</p>
+                <p>Thesis: "Multisensory Fusion for Underwater Robot Localization and Exploration"</p>
+            </div>
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h3 class="text-2xl font-bold">MS in Electrical Engineering</h3>
+                <p>University of Gujrat (2018-2020)</p>
+            </div>
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h3 class="text-2xl font-bold">BS in Electrical Engineering</h3>
+                <p>University of Management and Technology (2014-2018)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="container mx-auto px-4 py-16 bg-gray-200 fade-in">
+        <h2 class="text-4xl font-bold text-center mb-8">Certifications</h2>
+        <ul class="list-disc list-inside text-center">
+            <li>Python for Machine Learning & Data Science (Udemy, 2022)</li>
+            <li>Full Stack Web Development with Flask (Pirple, 2023)</li>
+            <li>Associate Artificial Intelligence (DigiPAKISTAN, 2022)</li>
+            <li>Python for Everybody (Coursera, 2021)</li>
+            <!-- Add more certifications as needed -->
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container mx-auto px-4 py-16 fade-in">
+        <h2 class="text-4xl font-bold text-center mb-8">Contact Me</h2>
+        <div class="text-center">
+            <p>Address: Gujrat, Punjab, Pakistan</p>
+            <p>Email: <a href="mailto:eeumairali@gmail.com" class="text-blue-900 underline">eeumairali@gmail.com</a></p>
+            <p>Website: <a href="https://darecoding.com" class="text-blue-900 underline">darecoding.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/eeumairali" class="text-blue-900 underline">linkedin.com/in/eeumairali</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white text-center py-6">
+        <p>&copy; 2024 Umair Ali. All rights reserved.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const sections = document.querySelectorAll('.fade-in');
+            sections.forEach(section => {
+                const sectionPos = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (sectionPos < windowHeight - 50) {
+                    section.classList.add('fade-in-visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
