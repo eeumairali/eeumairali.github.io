@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Umair Ali - Python Developer, Data Science Expert, and PhD Scholar in Computer Vision">
-    <title>Umair Ali - Profile</title>
+    <meta name="description" content="Umair Ali - PhD Scholar, ML Expert, Python Developer, and Tutor specializing in Computer Vision, Machine Learning, and Data Science">
+    <meta name="keywords" content="Umair Ali, Python Developer, Machine Learning, Data Science, Computer Vision, PhD, Tutor, AI, TensorFlow, PyTorch">
+    <meta name="author" content="Umair Ali">
+    <meta property="og:title" content="Umair Ali - ML Expert & Python Developer">
+    <meta property="og:description" content="PhD scholar with 5+ years experience in Machine Learning, Computer Vision, and Python development. Hire me for your next project or tutoring needs.">
+    <meta property="og:type" content="website">
+    <title>Umair Ali - PhD Scholar | ML Expert | Python Developer | Tutor</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -32,120 +37,455 @@
             padding-right: 10px;
             line-height: 20px;
         }
+        .shadow-hover:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 2px;
+            background-color: #4a90e2;
+        }
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -8px;
+            height: 18px;
+            width: 18px;
+            border-radius: 50%;
+            background-color: #4a90e2;
+        }
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: none;
+            }
+            .mobile-menu.active {
+                display: block;
+            }
+        }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans">
+<body class="bg-gray-50 text-gray-900 font-sans">
 
     <!-- Navbar -->
     <nav class="w-full bg-blue-900 shadow-lg fixed z-10">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <h1 class="text-white text-2xl font-bold">Umair Ali</h1>
-            <ul class="flex space-x-4">
-                <li><a href="#about" class="text-white hover:text-gray-300">About</a></li>
-                <li><a href="#experience" class="text-white hover:text-gray-300">Experience</a></li>
-                <li><a href="#education" class="text-white hover:text-gray-300">Education</a></li>
-                <li><a href="#certifications" class="text-white hover:text-gray-300">Certifications</a></li>
-                <li><a href="#contact" class="text-white hover:text-gray-300">Contact</a></li>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#about" class="text-white hover:text-blue-200 transition duration-300">About</a></li>
+                <li><a href="#skills" class="text-white hover:text-blue-200 transition duration-300">Skills</a></li>
+                <li><a href="#experience" class="text-white hover:text-blue-200 transition duration-300">Experience</a></li>
+                <li><a href="#education" class="text-white hover:text-blue-200 transition duration-300">Education</a></li>
+                <li><a href="#publications" class="text-white hover:text-blue-200 transition duration-300">Publications</a></li>
+                <li><a href="#certifications" class="text-white hover:text-blue-200 transition duration-300">Certifications</a></li>
+                <li><a href="#collaborate" class="text-white hover:text-blue-200 transition duration-300">Collaborate</a></li>
+                <li><a href="#contact" class="text-white hover:text-blue-200 transition duration-300">Contact</a></li>
+            </ul>
+        </div>
+        <div id="mobile-menu" class="mobile-menu bg-blue-800 w-full">
+            <ul class="py-4 px-6">
+                <li class="py-2"><a href="#about" class="text-white hover:text-blue-200 transition duration-300">About</a></li>
+                <li class="py-2"><a href="#skills" class="text-white hover:text-blue-200 transition duration-300">Skills</a></li>
+                <li class="py-2"><a href="#experience" class="text-white hover:text-blue-200 transition duration-300">Experience</a></li>
+                <li class="py-2"><a href="#education" class="text-white hover:text-blue-200 transition duration-300">Education</a></li>
+                <li class="py-2"><a href="#publications" class="text-white hover:text-blue-200 transition duration-300">Publications</a></li>
+                <li class="py-2"><a href="#certifications" class="text-white hover:text-blue-200 transition duration-300">Certifications</a></li>
+                <li class="py-2"><a href="#collaborate" class="text-white hover:text-blue-200 transition duration-300">Collaborate</a></li>
+                <li class="py-2"><a href="#contact" class="text-white hover:text-blue-200 transition duration-300">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center bg-blue-900 text-white">
-        <div class="text-center">
-            <h1 class="text-5xl font-bold">Umair Ali</h1>
-            <p class="text-xl mt-4">Python Developer | Data Scientist | PhD Scholar in Computer Vision</p>
-            <a href="#about" class="mt-8 inline-block bg-white text-blue-900 px-6 py-3 rounded-full hover:bg-gray-200">Learn More</a>
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+        <div class="text-center px-4">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">Umair Ali</h1>
+            <p class="text-xl md:text-2xl mt-4 mb-8">PhD Scholar | ML Expert | Python Developer | Tutor</p>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8">With 5+ years in programming and academia, I blend cutting-edge research in computer vision with practical AI solutions and education.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#collaborate" class="bg-white text-blue-900 px-6 py-3 rounded-full hover:bg-blue-100 transition duration-300">Collaborate With Me</a>
+                <a href="#contact" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-blue-900 transition duration-300">Contact Me</a>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="container mx-auto px-4 py-16 fade-in">
         <h2 class="text-4xl font-bold text-center mb-8">About Me</h2>
-        <p class="mt-6 text-center text-lg">I am currently pursuing a PhD in Electrical Engineering with a focus on <strong>Computer Vision</strong> tasks. I have extensive experience in Python programming, machine learning projects, and tutoring students in Python from basic to advanced levels.</p>
-        <p class="mt-4 text-center text-lg">As a freelancer and tutor, I have worked on multiple projects, helping clients and students with data analysis, machine learning, and web development. Visit my website: <a href="https://darecoding.com" class="text-blue-900 underline hover:text-blue-700">darecoding.com</a>.</p>
+        <div class="max-w-4xl mx-auto">
+            <p class="mt-6 text-lg">PhD scholar and Python developer with expertise in Machine Learning, Computer Vision, and Data Science. With 5+ years in programming and academia, I blend research in livestock behavior recognition with practical AI solutions. I'm also a passionate tutor in Python and AI technologies, committed to sharing knowledge and empowering students worldwide.</p>
+            <p class="mt-4 text-lg">My research focus is on Computer Vision for livestock management, exploring how advanced AI techniques can improve agricultural processes and animal welfare. I combine theoretical expertise with practical implementation skills in TensorFlow, PyTorch, and various Python frameworks.</p>
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <a href="https://github.com/eeumairali" target="_blank" class="flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition duration-300">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/eeumairali" target="_blank" class="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500 transition duration-300">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://eeumairali.github.io/" target="_blank" class="flex items-center gap-2 bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-500 transition duration-300">
+                    <i class="fas fa-globe"></i> Website
+                </a>
+                <a href="https://preply.com/en/tutor/1484327" target="_blank" class="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-500 transition duration-300">
+                    <i class="fas fa-chalkboard-teacher"></i> Preply
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="container mx-auto px-4 py-16 bg-gray-100 fade-in">
+        <h2 class="text-4xl font-bold text-center mb-8">Technical Skills</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="bg-white shadow-md rounded-lg p-6 shadow-hover">
+                <h3 class="text-2xl font-bold mb-4">Programming Languages</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span>Python (Advanced)</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span>MATLAB (Advanced)</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span>C (Intermediate)</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span>JavaScript (Basic)</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white shadow-md rounded-lg p-6 shadow-hover">
+                <h3 class="text-2xl font-bold mb-4">Frameworks & Libraries</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check text-green-500"></i>
+                        <span>TensorFlow</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check text-green-500"></i>
+                        <span>PyTorch</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check text-green-500"></i>
+                        <span>Scikit-learn</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check text-green-500"></i>
+                        <span>NumPy</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check text-green-500"></i>
+                        <span>Pandas</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check text-green-500"></i>
+                        <span>Django</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check text-green-500"></i>
+                        <span>Flask</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check text-green-500"></i>
+                        <span>PyQt5</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check text-green-500"></i>
+                        <span>Matplotlib</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check text-green-500"></i>
+                        <span>ROS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white shadow-md rounded-lg p-6 shadow-hover">
+                <h3 class="text-2xl font-bold mb-4">Database & Tools</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-database text-blue-500"></i>
+                        <span>SQLite</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-database text-blue-500"></i>
+                        <span>PostgreSQL</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-database text-blue-500"></i>
+                        <span>MongoDB</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-code-branch text-blue-500"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-laptop-code text-blue-500"></i>
+                        <span>PyCharm</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-laptop-code text-blue-500"></i>
+                        <span>VS Code</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-laptop-code text-blue-500"></i>
+                        <span>Jupyter</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-microchip text-blue-500"></i>
+                        <span>Circuit Design</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white shadow-md rounded-lg p-6 shadow-hover">
+                <h3 class="text-2xl font-bold mb-4">Personal Skills</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-lightbulb text-yellow-500"></i>
+                        <span>Problem Solving</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-users text-yellow-500"></i>
+                        <span>Team Leadership</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-rocket text-yellow-500"></i>
+                        <span>Initiative</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-file-alt text-yellow-500"></i>
+                        <span>Technical Writing</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-clock text-yellow-500"></i>
+                        <span>Time Management</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-search text-yellow-500"></i>
+                        <span>Research</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="container mx-auto px-4 py-16 bg-gray-200 fade-in">
-        <h2 class="text-4xl font-bold text-center mb-8">Experience</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white shadow-md rounded-lg p-6">
-                <h3 class="text-2xl font-bold">Tutor and Freelancer for Python</h3>
-                <p>Preply and Fiverr</p>
-                <p>I provide Python consultancy and tutoring services, from basic programming to advanced projects like data science and machine learning.</p>
+    <section id="experience" class="container mx-auto px-4 py-16 fade-in">
+        <h2 class="text-4xl font-bold text-center mb-12">Professional Experience</h2>
+        <div class="max-w-4xl mx-auto">
+            <div class="timeline-item">
+                <div class="bg-white shadow-md rounded-lg p-6 mb-4 shadow-hover">
+                    <h3 class="text-2xl font-bold">Data Science and Machine Learning Engineer</h3>
+                    <p class="text-lg text-blue-600 mb-2">Upwork | 2022 - Present</p>
+                    <p class="mb-4">Working as a freelance specialist providing advanced AI and data science solutions.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Machine Learning model development and implementation</li>
+                        <li>Data analysis, cleaning, and visualization for business insights</li>
+                        <li>Computer vision applications using TensorFlow and PyTorch</li>
+                        <li>Automation solutions and process optimization</li>
+                        <li>Maintained 95% client satisfaction rate across 30+ projects</li>
+                    </ul>
+                </div>
             </div>
-            <div class="bg-white shadow-md rounded-lg p-6">
-                <h3 class="text-2xl font-bold">Associate Engineer</h3>
-                <p>Mezino Technologies (2021-2022)</p>
-                <ul class="list-disc list-inside">
-                    <li>Embedded systems for bidirectional communication and HMI control</li>
-                    <li>Web scraping for machine learning models</li>
-                    <li>Django and Next.js for web development</li>
-                </ul>
+            
+            <div class="timeline-item">
+                <div class="bg-white shadow-md rounded-lg p-6 mb-4 shadow-hover">
+                    <h3 class="text-2xl font-bold">Python Tutor</h3>
+                    <p class="text-lg text-blue-600 mb-2">Preply | 2022 - Present</p>
+                    <p class="mb-4">Providing comprehensive Python education to students worldwide.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Teaching Python fundamentals to advanced concepts to students globally</li>
+                        <li>Developing customized learning paths for students based on skill level</li>
+                        <li>Specializing in Data Science, ML/AI, and Web Development with Python</li>
+                        <li>Conducting one-on-one sessions focusing on practical project-based learning</li>
+                        <li>Profile: <a href="https://preply.com/en/tutor/1484327" class="text-blue-600 hover:underline" target="_blank">https://preply.com/en/tutor/1484327</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="bg-white shadow-md rounded-lg p-6 mb-4 shadow-hover">
+                    <h3 class="text-2xl font-bold">Freelance Python Developer</h3>
+                    <p class="text-lg text-blue-600 mb-2">Fiverr | 2020 - Present</p>
+                    <p class="mb-4">Completed 100+ diverse programming projects across various domains.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Python and MATLAB programming for data analysis and visualization</li>
+                        <li>Converting MATLAB code to Python for optimized performance</li>
+                        <li>Developing automation scripts and data processing pipelines</li>
+                        <li>Creating custom solutions for scientific computing and engineering problems</li>
+                        <li>Username: py_iot (currently deactivated)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="bg-white shadow-md rounded-lg p-6 mb-4 shadow-hover">
+                    <h3 class="text-2xl font-bold">Associate Engineer</h3>
+                    <p class="text-lg text-blue-600 mb-2">Mezino Technologies | 2021 - 2022</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Developed embedded systems for bidirectional communication and HMI control using Python, PyQt5, eRPC, and Raspberry Pi</li>
+                        <li>Created web scrapers for data collection to train machine learning models using Python, PostgreSQL, MongoDB, Scrapy, and Selenium</li>
+                        <li>Built web applications using Django framework with HTML, CSS, JavaScript, and Bootstrap</li>
+                        <li>Collaborated on Next.js frontend development for responsive website interfaces</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="bg-white shadow-md rounded-lg p-6 shadow-hover">
+                    <h3 class="text-2xl font-bold">Internship</h3>
+                    <p class="text-lg text-blue-600 mb-2">SERVIS INDUSTRY GUJRAT | 2018</p>
+                    <p class="mb-4">Gained industrial experience in electrical engineering and automation systems.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>PLC programming and embedded systems troubleshooting</li>
+                        <li>Industrial automation systems maintenance and optimization</li>
+                        <li>Power system distribution and control in manufacturing environment</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="container mx-auto px-4 py-16 fade-in">
-        <h2 class="text-4xl font-bold text-center mb-8">Education</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white shadow-md rounded-lg p-6">
-                <h3 class="text-2xl font-bold">PhD in Electrical Engineering (Computer Vision)</h3>
-                <p>University of Gujrat (2024-2027)</p>
-                <p>Thesis: "Multisensory Fusion for Underwater Robot Localization and Exploration"</p>
+    <section id="education" class="container mx-auto px-4 py-16 bg-gray-100 fade-in">
+        <h2 class="text-4xl font-bold text-center mb-12">Academic Background</h2>
+        <div class="max-w-4xl mx-auto">
+            <div class="timeline-item">
+                <div class="bg-white shadow-md rounded-lg p-6 mb-4 shadow-hover">
+                    <h3 class="text-2xl font-bold">PhD in Electrical Engineering</h3>
+                    <p class="text-lg text-blue-600 mb-2">UNIVERSITY OF GUJRAT | 2024 - 2027</p>
+                    <p class="mb-4">Research focus: Livestock recognition and management using Computer Vision and AI.</p>
+                    <p class="font-bold">Core areas:</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Advanced Machine Learning algorithms for pattern recognition</li>
+                        <li>Computer Vision techniques for animal behavior analysis</li>
+                        <li>Deep Learning architectures for classification and prediction</li>
+                        <li>Real-time monitoring systems development</li>
+                    </ul>
+                </div>
             </div>
-            <div class="bg-white shadow-md rounded-lg p-6">
-                <h3 class="text-2xl font-bold">MS in Electrical Engineering</h3>
-                <p>University of Gujrat (2018-2020)</p>
+            
+            <div class="timeline-item">
+                <div class="bg-white shadow-md rounded-lg p-6 mb-4 shadow-hover">
+                    <h3 class="text-2xl font-bold">MS Electrical Engineering</h3>
+                    <p class="text-lg text-blue-600 mb-2">UNIVERSITY OF GUJRAT | 2018 - 2020</p>
+                    <p class="mb-2">CGPA: 3.43</p>
+                    <p class="font-bold">Thesis: "Multisensory Fusion For Underwater Robot Localization And Exploration"</p>
+                    <p class="mt-2 font-bold">Key subjects:</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Machine Learning and Neural Networks</li>
+                        <li>Digital Control Systems</li>
+                        <li>Advanced Power Electronics</li>
+                        <li>Sensor Fusion Techniques</li>
+                    </ul>
+                </div>
             </div>
-            <div class="bg-white shadow-md rounded-lg p-6">
-                <h3 class="text-2xl font-bold">BS in Electrical Engineering</h3>
-                <p>University of Management and Technology (2014-2018)</p>
+            
+            <div class="timeline-item">
+                <div class="bg-white shadow-md rounded-lg p-6 mb-4 shadow-hover">
+                    <h3 class="text-2xl font-bold">BS Electrical Engineering</h3>
+                    <p class="text-lg text-blue-600 mb-2">UNIVERSITY OF MANAGEMENT AND TECHNOLOGY | 2014 - 2018</p>
+                    <p class="mb-2">CGPA: 2.81</p>
+                    <p class="font-bold">Final Project: Automated Petrol Pump System</p>
+                    <p class="mt-2 font-bold">Key subjects:</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Digital Logic Design</li>
+                        <li>Computer Organization and Architecture</li>
+                        <li>Computer Networks</li>
+                        <li>Control Systems</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="bg-white shadow-md rounded-lg p-6 shadow-hover">
+                    <h3 class="text-2xl font-bold">FSc Pre-Engineering</h3>
+                    <p class="text-lg text-blue-600 mb-2">GOVT. ZAMINDAR POSTGRADUATE COLLEGE | 2011 - 2013</p>
+                    <p class="mb-2">Completed and improved in 2014</p>
+                    <p class="font-bold">Major subjects: Physics, Mathematics, and Chemistry</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="container mx-auto px-4 py-16 fade-in">
+        <h2 class="text-4xl font-bold text-center mb-12">Publications</h2>
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white shadow-md rounded-lg p-6 mb-6 shadow-hover">
+                <h3 class="text-2xl font-bold">Cow Face Detection for Precision Livestock Management using YOLOv8</h3>
+                <p class="text-lg text-blue-600 mb-2">INTERNATIONAL JOURNAL OF INNOVATIONS IN SCIENCE AND TECHNOLOGY | March 2025</p>
+                <p class="mb-2">Authors: Umair Ali, Wasif Muhammad</p>
+                <p class="mb-4">Fine-tuned YOLOv8 with COCO-pretrained weights and mixed datasets for accurate cow face detection in precision livestock management applications.</p>
+                <a href="https://www.researchgate.net/publication/390810418_Cow_Face_Detection_for_Precision_Livestock_Management_using_YOLOv8" class="text-blue-600 hover:underline" target="_blank">View on ResearchGate</a>
+            </div>
+            
+            <div class="bg-white shadow-md rounded-lg p-6 shadow-hover">
+                <h3 class="text-2xl font-bold">Multi-Sensor Fusion for Underwater Robot Self-Localization Using PC/BC-DIM Neural Network</h3>
+                <p class="text-lg text-blue-600 mb-2">SENSOR REVIEW JOURNAL, Emerald Publishing Limited | October 2021</p>
+                <p class="mb-2">Authors: Ali Umair, Wasif Muhammad</p>
+                <p class="mb-4">Proposed a novel predictive coding-biased competition/divisive input modulation (PC/BC-DIM) neural network-based multi-sensor fusion approach for optimal noisy sensory information processing.</p>
+                <a href="https://doi.org/10.1108/SR-03-2021-0104" class="text-blue-600 hover:underline" target="_blank">View Publication</a>
             </div>
         </div>
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="container mx-auto px-4 py-16 bg-gray-200 fade-in">
-        <h2 class="text-4xl font-bold text-center mb-8">Certifications</h2>
-        <ul class="list-disc list-inside text-center">
-            <li>Python for Machine Learning & Data Science (Udemy, 2022)</li>
-            <li>Full Stack Web Development with Flask (Pirple, 2023)</li>
-            <li>Associate Artificial Intelligence (DigiPAKISTAN, 2022)</li>
-            <li>Python for Everybody (Coursera, 2021)</li>
-            <!-- Add more certifications as needed -->
-        </ul>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="container mx-auto px-4 py-16 fade-in">
-        <h2 class="text-4xl font-bold text-center mb-8">Contact Me</h2>
-        <div class="text-center">
-            <p>Address: Gujrat, Punjab, Pakistan</p>
-            <p>Email: <a href="mailto:eeumairali@gmail.com" class="text-blue-900 underline">eeumairali@gmail.com</a></p>
-            <p>Website: <a href="https://darecoding.com" class="text-blue-900 underline">darecoding.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/eeumairali" class="text-blue-900 underline">linkedin.com/in/eeumairali</a></p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-blue-900 text-white text-center py-6">
-        <p>&copy; 2024 Umair Ali. All rights reserved.</p>
-    </footer>
-
-    <script>
-        window.addEventListener('scroll', function () {
-            const sections = document.querySelectorAll('.fade-in');
-            sections.forEach(section => {
-                const sectionPos = section.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                if (sectionPos < windowHeight - 50) {
-                    section.classList.add('fade-in-visible');
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+    <section id="certifications" class="container mx-auto px-4 py-16 bg-gray-100 fade-in">
+        <h2 class="text-4xl font-bold text-center mb-12">Certifications</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div class="bg-white shadow-md rounded-lg p-6 shadow-hover">
+                <h3 class="text-xl font-bold">AI For Everyone</h3>
+                <p class="text-blue-600 mb-2">DeepLearning.AI | 2025</p>
+                <p class="text-sm mb-2">Credential ID: 7POCAYWNN1OW</p>
+                <p>Developed foundational understanding of AI concepts, strategies for AI implementation, and ethical considerations in AI development.</p>
+            </div>
+            
+            <div class="bg-white shadow-md rounded-lg p-6 shadow-hover">
+                <h3 class="text-xl font-bold">Introduction to Programming with MATLAB</h3>
+                <p class="text-blue-600 mb-2">Vanderbilt University | 2024</p>
+                <p class="text-sm mb-2">Credential ID: 5KLG98QEKQ2W</p>
+                <p>Mastered advanced MATLAB programming techniques for scientific computing and data analysis.</p>
+            </div>
+            
+            <div class="bg-white shadow-md rounded-lg p-6 shadow-hover">
+                <h3 class="text-xl font-bold">Image Denoising Using AutoEncoders in Keras and Python</h3>
+                <p class="text-blue-600 mb-2">Coursera |
