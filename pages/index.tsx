@@ -60,7 +60,6 @@ interface Message {
 }
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
   const [certificates, setCertificates] = useState<Certificate[]>([])
@@ -74,11 +73,6 @@ export default function Home() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-
-  // Ensure client-side rendering
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   // Mock initial certificates
   useEffect(() => {
@@ -228,11 +222,6 @@ export default function Home() {
       }
       setCertificates([...certificates, newCertificate])
     }
-  }
-
-  // Prevent hydration mismatch
-  if (!mounted) {
-    return null
   }
 
   return (
@@ -425,45 +414,37 @@ export default function Home() {
 
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700 text-white relative overflow-hidden">
-        {mounted && <FloatingParticles />}
+        <FloatingParticles />
         
         {/* Animated background blobs */}
-        {mounted && (
-          <>
-            <MorphingBlob className="w-96 h-96 -top-48 -left-48" />
-            <MorphingBlob className="w-80 h-80 -bottom-40 -right-40" />
-          </>
-        )}
+        <MorphingBlob className="w-96 h-96 -top-48 -left-48" />
+        <MorphingBlob className="w-80 h-80 -bottom-40 -right-40" />
         
         {/* Floating geometric shapes */}
-        {mounted && (
-          <>
-            <motion.div
-              animate={{
-                rotate: [0, 360],
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-              className="absolute top-20 right-20 w-20 h-20 border-2 border-white/20 rounded-full"
-            />
-            <motion.div
-              animate={{
-                rotate: [360, 0],
-                y: [0, -20, 0],
-              }}
-              transition={{
-                duration: 15,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="absolute bottom-20 left-20 w-16 h-16 border-2 border-white/20 transform rotate-45"
-            />
-          </>
-        )}
+        <motion.div
+          animate={{
+            rotate: [0, 360],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute top-20 right-20 w-20 h-20 border-2 border-white/20 rounded-full"
+        />
+        <motion.div
+          animate={{
+            rotate: [360, 0],
+            y: [0, -20, 0],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute bottom-20 left-20 w-16 h-16 border-2 border-white/20 transform rotate-45"
+        />
         
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
           <motion.div
