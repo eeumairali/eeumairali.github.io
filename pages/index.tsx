@@ -1184,15 +1184,22 @@ export default function Home() {
             >
               <div>
                 <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <Mail className="w-6 h-6 text-primary-300" />
-                    <span>umair.ali@example.com</span>
-                  </div>
+                <div className="space-y-4">                <div className="flex items-center space-x-3">
+                  <Mail className="w-6 h-6 text-primary-300" />
+                  <span>eeumairali@gmail.com</span>
+                </div>
+                <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <Phone className="w-6 h-6 text-primary-300" />
-                    <span>+92 300 1234567</span>
+                    <span>WhatsApp Contact (Tell us your reason)</span>
                   </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                    <textarea 
+                      placeholder="Write your reason for contact and WhatsApp number. I'll contact you back via WhatsApp..."
+                      className="w-full h-20 px-3 py-2 rounded-md bg-white/20 border border-white/30 text-white placeholder-white/60 text-sm focus:outline-none focus:ring-2 focus:ring-white/50 resize-none"
+                    />
+                  </div>
+                </div>
                   <div className="flex items-center space-x-3">
                     <MapPin className="w-6 h-6 text-primary-300" />
                     <span>Gujrat, Pakistan</span>
@@ -1218,15 +1225,12 @@ export default function Home() {
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
                 <h4 className="text-lg font-semibold mb-3">Quick Contact</h4>
                 <p className="text-primary-200 mb-4">
-                  Need immediate help? Click the button below to send me a quick message on WhatsApp.
+                  Need immediate help? Send me your contact details and reason via the form above, and I'll reach out to you on WhatsApp.
                 </p>
-                <a
-                  href="https://wa.me/923001234567?text=Hi%20Umair,%20I'm%20interested%20in%20Python%20tutoring"
-                  className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors inline-flex items-center"
-                >
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  WhatsApp Me
-                </a>
+                <div className="text-green-400 font-medium text-sm flex items-center">
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  💬 I'll contact you back via WhatsApp once you fill the reason above
+                </div>
               </div>
             </motion.div>
           </div>
