@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://umairali.me/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Disallow any unwanted directories (none in this case)
+# Disallow: /private/

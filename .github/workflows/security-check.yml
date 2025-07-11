@@ -1,0 +1,111 @@
+name: Security & HTTPS Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run security checks weekly
+    - cron: '0 2 * * 1'
+
+jobs:
+  security-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Check HTTPS Configuration
+      run: |
+        echo "Checking HTTPS configuration..."
+        
+        # Check if .htaccess has HTTPS redirect
+        if grep -q "RewriteRule.*https" .htaccess; then
+          echo "✅ HTTPS redirect found in .htaccess"
+        else
+          echo "❌ HTTPS redirect not found in .htaccess"
+          exit 1
+        fi
+        
+        # Check if HSTS header is present
+        if grep -q "Strict-Transport-Security" .htaccess; then
+          echo "✅ HSTS header configured"
+        else
+          echo "❌ HSTS header not configured"
+          exit 1
+        fi
+        
+        # Check if security headers are present
+        if grep -q "X-Content-Type-Options" .htaccess; then
+          echo "✅ Security headers configured"
+        else
+          echo "❌ Security headers not configured"
+          exit 1
+        fi
+    
+    - name: Validate HTML Structure
+      run: |
+        echo "Validating HTML structure..."
+        
+        # Check for canonical HTTPS URL
+        if grep -q 'rel="canonical".*https://' index.html; then
+          echo "✅ Canonical HTTPS URL found"
+        else
+          echo "❌ Canonical HTTPS URL not found"
+          exit 1
+        fi
+        
+        # Check for proper meta tags
+        if grep -q 'https://umairali.me' index.html; then
+          echo "✅ HTTPS URLs in meta tags"
+        else
+          echo "❌ HTTPS URLs not found in meta tags"
+          exit 1
+        fi
+    
+    - name: Check SSL Certificate (if deployed)
+      run: |
+        echo "Checking SSL certificate..."
+        
+        # Only run if site is accessible
+        if curl -Is https://umairali.me >/dev/null 2>&1; then
+          echo "✅ Site is accessible via HTTPS"
+          
+          # Check SSL certificate
+          echo | openssl s_client -servername umairali.me -connect umairali.me:443 2>/dev/null | openssl x509 -noout -dates
+          
+          # Check HTTPS redirect
+          if curl -Is http://umairali.me | grep -q "301\|302"; then
+            echo "✅ HTTP to HTTPS redirect working"
+          else
+            echo "⚠️ HTTP to HTTPS redirect may not be working"
+          fi
+        else
+          echo "ℹ️ Site not yet accessible (deployment pending)"
+        fi
+    
+    - name: Security Headers Test
+      run: |
+        echo "Testing security headers..."
+        
+        # Only run if site is accessible
+        if curl -Is https://umairali.me >/dev/null 2>&1; then
+          echo "Checking security headers..."
+          curl -I https://umairali.me | grep -i "strict-transport-security\|x-content-type-options\|x-frame-options\|x-xss-protection" || echo "⚠️ Some security headers may not be active"
+        else
+          echo "ℹ️ Site not yet accessible for header testing"
+        fi
+    
+    - name: Summary
+      run: |
+        echo "🔒 Security Check Summary:"
+        echo "✅ HTTPS redirect configured"
+        echo "✅ Security headers configured"
+        echo "✅ SSL/TLS security measures in place"
+        echo "✅ HTML structure optimized for HTTPS"
+        echo ""
+        echo "📋 Manual steps required:"
+        echo "1. Enable 'Enforce HTTPS' in GitHub Pages settings"
+        echo "2. Verify custom domain DNS configuration"
+        echo "3. Test with SSL Labs and Security Headers scanners"

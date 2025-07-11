@@ -1,0 +1,22 @@
+{
+  "name": "Umair Ali - Python Tutor & Machine Learning Instructor",
+  "short_name": "Umair Ali",
+  "description": "Expert Python tutor and PhD scholar specializing in Machine Learning, Data Science, and AI instruction",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3a8a",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["education", "programming", "tutorial"]
+}
