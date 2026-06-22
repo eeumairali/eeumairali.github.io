@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://umairali.me/sitemap.xml
+Sitemap: https://eeumairali.github.io/sitemap.xml
 
 # Crawl delay (optional)
 Crawl-delay: 1

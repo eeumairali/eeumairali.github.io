@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Remove-Item \"c:\\\\Users\\\\eeuma\\\\Downloads\\\\eeumairali.github.io\\\\CNAME\")",
+      "PowerShell(Remove-Item \"c:\\\\Users\\\\eeuma\\\\Downloads\\\\eeumairali.github.io\\\\CNAME\" -Confirm:$false)"
+    ]
+  }
+}
