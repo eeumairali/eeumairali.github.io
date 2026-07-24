@@ -57,26 +57,26 @@ jobs:
         fi
         
         # Check for proper meta tags
-        if grep -q 'https://umairali.me' index.html; then
+        if grep -q 'https://eeumairali.github.io' index.html; then
           echo "✅ HTTPS URLs in meta tags"
         else
           echo "❌ HTTPS URLs not found in meta tags"
           exit 1
         fi
-    
+
     - name: Check SSL Certificate (if deployed)
       run: |
         echo "Checking SSL certificate..."
-        
+
         # Only run if site is accessible
-        if curl -Is https://umairali.me >/dev/null 2>&1; then
+        if curl -Is https://eeumairali.github.io >/dev/null 2>&1; then
           echo "✅ Site is accessible via HTTPS"
-          
+
           # Check SSL certificate
-          echo | openssl s_client -servername umairali.me -connect umairali.me:443 2>/dev/null | openssl x509 -noout -dates
-          
+          echo | openssl s_client -servername eeumairali.github.io -connect eeumairali.github.io:443 2>/dev/null | openssl x509 -noout -dates
+
           # Check HTTPS redirect
-          if curl -Is http://umairali.me | grep -q "301\|302"; then
+          if curl -Is http://eeumairali.github.io | grep -q "301\|302"; then
             echo "✅ HTTP to HTTPS redirect working"
           else
             echo "⚠️ HTTP to HTTPS redirect may not be working"
@@ -84,19 +84,19 @@ jobs:
         else
           echo "ℹ️ Site not yet accessible (deployment pending)"
         fi
-    
+
     - name: Security Headers Test
       run: |
         echo "Testing security headers..."
-        
+
         # Only run if site is accessible
-        if curl -Is https://umairali.me >/dev/null 2>&1; then
+        if curl -Is https://eeumairali.github.io >/dev/null 2>&1; then
           echo "Checking security headers..."
-          curl -I https://umairali.me | grep -i "strict-transport-security\|x-content-type-options\|x-frame-options\|x-xss-protection" || echo "⚠️ Some security headers may not be active"
+          curl -I https://eeumairali.github.io | grep -i "strict-transport-security\|x-content-type-options\|x-frame-options\|x-xss-protection" || echo "⚠️ Some security headers may not be active"
         else
           echo "ℹ️ Site not yet accessible for header testing"
         fi
-    
+
     - name: Summary
       run: |
         echo "🔒 Security Check Summary:"
@@ -107,5 +107,4 @@ jobs:
         echo ""
         echo "📋 Manual steps required:"
         echo "1. Enable 'Enforce HTTPS' in GitHub Pages settings"
-        echo "2. Verify custom domain DNS configuration"
-        echo "3. Test with SSL Labs and Security Headers scanners"
+        echo "2. Test with SSL Labs and Security Headers scanners"

@@ -101,14 +101,13 @@ Primary keywords this website ranks for:
 
 This website is automatically deployed to GitHub Pages using GitHub Actions. Any push to the main branch triggers an automatic deployment.
 
-### Custom Domain Setup
-- Domain: `umairali.me`
-- CNAME record configured for GitHub Pages
+### Domain
+- Served from `eeumairali.github.io` (no custom domain configured)
 - HTTPS enforced via GitHub Pages settings
 
 ### 🔒 SSL/HTTPS Security with GitHub Pages
 
-- **Automatic HTTPS**: GitHub Pages automatically provides SSL certificates for all *.github.io sites and custom domains (like umairali.me) configured via the repository's CNAME file and GitHub Pages settings.
+- **Automatic HTTPS**: GitHub Pages automatically provides SSL certificates for all *.github.io sites, no configuration needed.
 - **HTTPS Enforcement**: All traffic is redirected from HTTP to HTTPS by default. No manual .htaccess or server config is needed.
 - **SSL Certificate Authority**: Certificates are issued by Let's Encrypt and managed by GitHub.
 - **Browser Security**: Visitors will always see the secure padlock icon in their browser.

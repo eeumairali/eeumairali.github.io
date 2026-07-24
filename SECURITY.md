@@ -28,13 +28,7 @@ Your website is configured for SSL/HTTPS with the following security measures:
 1. Go to your GitHub repository settings
 2. Navigate to "Pages" section
 3. Ensure "Enforce HTTPS" is checked ✅
-4. Verify custom domain "umairali.me" is configured
-
-### Domain Configuration
-1. Ensure your domain DNS points to GitHub Pages:
-   - A records: 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
-   - CNAME record: eeumairali.github.io
-2. Verify SSL certificate is issued (may take 24-48 hours)
+4. No custom domain is configured — site is served from eeumairali.github.io
 
 ## Security Testing
 
@@ -42,7 +36,7 @@ After deployment, test your site security:
 
 1. **SSL Test**: https://www.ssllabs.com/ssltest/
 2. **Security Headers**: https://securityheaders.com/
-3. **HTTPS Redirect**: Visit http://umairali.me (should redirect to https://)
+3. **HTTPS Redirect**: Visit http://eeumairali.github.io (should redirect to https://)
 
 ## Expected Security Grade: A+
 
