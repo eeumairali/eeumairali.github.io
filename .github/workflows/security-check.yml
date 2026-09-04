@@ -57,7 +57,7 @@ jobs:
         fi
         
         # Check for proper meta tags
-        if grep -q 'https://eeumairali.github.io' index.html; then
+        if grep -q 'https://umaircodelab.com' index.html; then
           echo "✅ HTTPS URLs in meta tags"
         else
           echo "❌ HTTPS URLs not found in meta tags"
@@ -69,14 +69,14 @@ jobs:
         echo "Checking SSL certificate..."
 
         # Only run if site is accessible
-        if curl -Is https://eeumairali.github.io >/dev/null 2>&1; then
+        if curl -Is https://umaircodelab.com >/dev/null 2>&1; then
           echo "✅ Site is accessible via HTTPS"
 
           # Check SSL certificate
-          echo | openssl s_client -servername eeumairali.github.io -connect eeumairali.github.io:443 2>/dev/null | openssl x509 -noout -dates
+          echo | openssl s_client -servername umaircodelab.com -connect umaircodelab.com:443 2>/dev/null | openssl x509 -noout -dates
 
           # Check HTTPS redirect
-          if curl -Is http://eeumairali.github.io | grep -q "301\|302"; then
+          if curl -Is http://umaircodelab.com | grep -q "301\|302"; then
             echo "✅ HTTP to HTTPS redirect working"
           else
             echo "⚠️ HTTP to HTTPS redirect may not be working"
@@ -90,9 +90,9 @@ jobs:
         echo "Testing security headers..."
 
         # Only run if site is accessible
-        if curl -Is https://eeumairali.github.io >/dev/null 2>&1; then
+        if curl -Is https://umaircodelab.com >/dev/null 2>&1; then
           echo "Checking security headers..."
-          curl -I https://eeumairali.github.io | grep -i "strict-transport-security\|x-content-type-options\|x-frame-options\|x-xss-protection" || echo "⚠️ Some security headers may not be active"
+          curl -I https://umaircodelab.com | grep -i "strict-transport-security\|x-content-type-options\|x-frame-options\|x-xss-protection" || echo "⚠️ Some security headers may not be active"
         else
           echo "ℹ️ Site not yet accessible for header testing"
         fi

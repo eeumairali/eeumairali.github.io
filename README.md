@@ -102,7 +102,7 @@ Primary keywords this website ranks for:
 This website is automatically deployed to GitHub Pages using GitHub Actions. Any push to the main branch triggers an automatic deployment.
 
 ### Domain
-- Served from `eeumairali.github.io` (no custom domain configured)
+- Served from `umaircodelab.com` via GitHub Pages
 - HTTPS enforced via GitHub Pages settings
 
 ### 🔒 SSL/HTTPS Security with GitHub Pages
