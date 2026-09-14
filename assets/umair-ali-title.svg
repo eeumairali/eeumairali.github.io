@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Umair Ali - Python Tutor</title>
+  <desc id="desc">Umair Ali, one-to-one online Python teacher and PhD scholar in Machine Learning.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#18232c"/>
+      <stop offset="1" stop-color="#664930"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9ed8c2"/>
+      <stop offset="1" stop-color="#f4a77d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <circle cx="1010" cy="110" r="210" fill="#9ed8c2" opacity=".12"/>
+  <circle cx="1120" cy="550" r="260" fill="#f4a77d" opacity=".1"/>
+  <rect x="84" y="82" width="1032" height="466" rx="28" fill="#ffffff" opacity=".08" stroke="#ffffff" stroke-opacity=".24"/>
+  <circle cx="190" cy="185" r="72" fill="url(#accent)"/>
+  <text x="190" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="62" font-weight="700" fill="#18232c">UA</text>
+  <text x="112" y="330" font-family="Georgia, serif" font-size="68" font-weight="700" fill="#ffffff">Umair Ali</text>
+  <text x="116" y="389" font-family="Arial, sans-serif" font-size="28" letter-spacing="2" fill="#9ed8c2">PYTHON TUTOR · ML/AI SCHOLAR</text>
+  <text x="116" y="452" font-family="Arial, sans-serif" font-size="24" fill="#ffffff" opacity=".82">One-to-one online lessons for curious minds</text>
+  <rect x="116" y="488" width="300" height="5" rx="2.5" fill="url(#accent)"/>
+</svg>
