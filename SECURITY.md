@@ -28,7 +28,7 @@ Your website is configured for SSL/HTTPS with the following security measures:
 1. Go to your GitHub repository settings
 2. Navigate to "Pages" section
 3. Ensure "Enforce HTTPS" is checked ✅
-4. The site is served from umaircodelab.com
+4. The site is served from eeumairali.github.io
 
 ## Security Testing
 
@@ -36,7 +36,7 @@ After deployment, test your site security:
 
 1. **SSL Test**: https://www.ssllabs.com/ssltest/
 2. **Security Headers**: https://securityheaders.com/
-3. **HTTPS Redirect**: Visit http://umaircodelab.com (should redirect to https://)
+3. **HTTPS Redirect**: Visit http://eeumairali.github.io (should redirect to https://)
 
 ## Expected Security Grade: A+
 
