@@ -1,1619 +1,449 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Umair Ali — PhD Researcher, Computer Vision for Precision Livestock</title>
+<meta name="description" content="Umair Ali is a PhD researcher in Electrical Engineering at the University of Gujrat (Intelligent Systems Lab), working on computer vision for precision livestock: detecting, tracking and recognising the behaviour of animals.">
+<meta name="author" content="Umair Ali">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0f2a3a">
+<link rel="canonical" href="https://eeumairali.github.io/">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://eeumairali.github.io/">
+<meta property="og:title" content="Umair Ali — PhD Researcher, Computer Vision">
+<meta property="og:description" content="Computer vision for precision livestock: detection, tracking and behaviour recognition. Intelligent Systems Lab, University of Gujrat.">
+<meta property="og:image" content="https://eeumairali.github.io/assets/umair-ali-title.svg">
+<meta property="profile:first_name" content="Umair">
+<meta property="profile:last_name" content="Ali">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="/assets/umair-ali-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://eeumairali.github.io/#person",
+  "name": "Umair Ali",
+  "alternateName": "eeumairali",
+  "jobTitle": "PhD Researcher in Electrical Engineering",
+  "description": "PhD researcher at the Intelligent Systems Lab, University of Gujrat, working on computer vision for precision livestock: animal detection, tracking and behaviour recognition.",
+  "url": "https://eeumairali.github.io/",
+  "email": "mailto:eeumairali@gmail.com",
+  "affiliation": {"@type": "CollegeOrUniversity", "name": "University of Gujrat"},
+  "alumniOf": [
+    {"@type": "CollegeOrUniversity", "name": "University of Gujrat"},
+    {"@type": "CollegeOrUniversity", "name": "University of Management and Technology"}
+  ],
+  "knowsAbout": ["Computer vision", "Object detection", "Multi-object tracking", "Animal behaviour recognition", "Deep learning", "Precision livestock farming", "Sensor fusion", "Robotics"],
+  "address": {"@type": "PostalAddress", "addressLocality": "Gujrat", "addressRegion": "Punjab", "addressCountry": "PK"},
+  "sameAs": [
+    "https://www.linkedin.com/in/eeumairali",
+    "https://github.com/eeumairali",
+    "https://www.researchgate.net/profile/Umair-Ali-35",
+    "https://umaircodelab.com"
+  ]
+}
+</script>
+<style>
+:root {
+  --bg: #fbfaf7; --card: #ffffff; --ink: #14212b; --muted: #5b6b77; --line: #e4e2dc;
+  --accent: #0f6e6a; --accent-soft: #e3f2f0; --on-accent: #ffffff; --shadow: 0 1px 2px rgba(20,33,43,.06), 0 8px 24px rgba(20,33,43,.05);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #0f171d; --card: #16222b; --ink: #e8eef2; --muted: #9aabb6; --line: #26343e; --accent: #4fc3b8; --accent-soft: #15302f; --on-accent: #06201e; --shadow: none; }
+}
+:root[data-theme="dark"] { --bg: #0f171d; --card: #16222b; --ink: #e8eef2; --muted: #9aabb6; --line: #26343e; --accent: #4fc3b8; --accent-soft: #15302f; --on-accent: #06201e; --shadow: none; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.65 Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 600; line-height: 1.2; margin: 0; }
+.skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: var(--bg); padding: 8px 12px; border-radius: 8px; z-index: 10; }
+.skip:focus { left: 8px; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Umair Ali (eeumairali) — expert Python tutor & Python teacher for kids, beginners, professionals, and career switchers. One-to-one online teacher, 5,000+ lessons, 5.0★ rating, and 200+ projects completed. PhD scholar in ML/AI. Free 30-min trial lesson. From $15/hr, worldwide.">
-    <meta name="keywords" content="eeumairali, Umair Ali, Python tutor, Python teacher, Python teacher for kids, Python for beginners, Python for career switchers, kids teacher online, online Python teacher, one to one teacher, one-to-one Python tutor, private Python tutor, Python coding classes for kids, machine learning tutor, data science tutor, online coding teacher">
-    <meta name="author" content="Umair Ali">
-    <meta name="robots" content="index, follow">
-    <meta name="geo.region" content="PK-PB">
-    <meta name="geo.placename" content="Gujrat, Pakistan">
-    <meta name="theme-color" content="#102a43">
+/* top bar */
+.top { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; gap: 14px; height: 58px; }
+.brand { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 18px; color: var(--ink); text-decoration: none; margin-right: auto; }
+.top nav { display: flex; gap: 16px; font-size: 14px; }
+.top nav a { color: var(--muted); text-decoration: none; }
+.top nav a:hover { color: var(--ink); }
+.btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--card); color: var(--ink); font: 500 14px Inter, sans-serif; text-decoration: none; cursor: pointer; }
+.btn:hover { border-color: var(--accent); }
+.btn-main { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+@media (max-width: 760px) { .top nav { display: none; } }
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="profile">
-    <meta property="og:url" content="https://eeumairali.github.io/">
-    <meta property="og:title" content="Umair Ali — Python Tutor for Kids, Beginners & Professionals">
-    <meta property="og:description" content="5,000+ lessons, 200+ projects, and a 5.0★ rating. One-to-one online Python teacher for kids, beginners, professionals, and career switchers — Data Science and Machine Learning tutoring too. Free 30-min trial. Book online.">
-    <meta property="og:image" content="https://eeumairali.github.io/assets/umair-ali-title.svg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Umair Ali - Python Tutor and One-to-One Online Coding Teacher for Kids, Beginners, and Professionals">
-    <meta property="og:site_name" content="Umair Ali">
-    <meta property="og:locale" content="en_US">
+/* hero */
+.hero { padding: 64px 0 40px; display: grid; grid-template-columns: 1fr auto; gap: 36px; align-items: center; }
+.eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 12px; }
+.hero h1 { font-size: clamp(36px, 6vw, 56px); }
+.lead { font-size: 19px; color: var(--muted); max-width: 640px; margin: 18px 0 0; }
+.lead b { color: var(--ink); font-weight: 600; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+.portrait { width: 168px; height: 168px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, #0f6e6a, #164e63); color: #fff; font: 600 56px Fraunces, Georgia, serif; box-shadow: var(--shadow); }
+.portrait img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin-bottom: 8px; }
+.facts div { background: var(--card); padding: 16px 18px; }
+.facts b { display: block; font: 600 24px Fraunces, Georgia, serif; }
+.facts span { font-size: 13px; color: var(--muted); }
+@media (max-width: 760px) { .hero { grid-template-columns: 1fr; padding-top: 32px; } .portrait { width: 104px; height: 104px; font-size: 36px; order: -1; } .facts { grid-template-columns: repeat(2, 1fr); } }
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Umair Ali — Python Tutor for Kids, Beginners & Professionals">
-    <meta name="twitter:description" content="5,000+ lessons, 200+ projects, and a 5.0★ rating. One-to-one online Python teacher for kids, beginners & professionals. Free trial.">
-    <meta name="twitter:image" content="https://eeumairali.github.io/assets/umair-ali-title.svg">
+/* sections */
+section { padding: 56px 0 8px; scroll-margin-top: 60px; }
+.h2row { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; border-bottom: 1px solid var(--line); padding-bottom: 10px; margin-bottom: 22px; }
+.h2row h2 { font-size: 28px; }
+.h2row small { color: var(--muted); font-size: 14px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; box-shadow: var(--shadow); }
+.grid2 { display: grid; grid-template-columns: 1.1fr 1fr; gap: 22px; align-items: start; }
+@media (max-width: 860px) { .grid2 { grid-template-columns: 1fr; } }
+.muted { color: var(--muted); }
+.pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 0; padding: 0; list-style: none; }
+.pills li { font-size: 13px; padding: 3px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+.steps { counter-reset: s; list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 12px; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 30px 1fr; gap: 10px; }
+.steps li::before { content: counter(s); width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--on-accent); font-size: 13px; font-weight: 600; margin-top: 2px; }
+.steps b { display: block; }
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://eeumairali.github.io/">
+/* the illustration */
+.demo { padding: 0; overflow: hidden; margin: 0; }
+.demo canvas { display: block; width: 100%; height: auto; background: #6b8f3e; }
+.demo-bar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 12px 14px; border-top: 1px solid var(--line); }
+.demo-bar button { padding: 5px 11px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--muted); font: 500 13px Inter, sans-serif; cursor: pointer; }
+.demo-bar button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.demo-note { margin-left: auto; font-size: 12px; color: var(--muted); }
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/assets/umair-ali-title.svg">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-
-    <title>Umair Ali — Python Tutor for Kids, Beginners & Professionals</title>
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    [
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "@id": "https://eeumairali.github.io/#person",
-        "name": "Umair Ali",
-        "givenName": "Umair",
-        "familyName": "Ali",
-        "alternateName": "eeumairali",
-        "jobTitle": "Python Tutor and Python Teacher for Kids, Beginners, Professionals, and Career Switchers",
-        "description": "Umair Ali is a PhD scholar in Electrical Engineering at the University of Gujrat, Pakistan, specializing in Computer Vision and Machine Learning. He works as an online Python tutor and Python teacher for kids, complete beginners, working professionals, and career switchers, offering one-to-one lessons. He has taught 5,000+ Python programming lessons and completed 200+ technical projects with a 5.0-star rating, and has 7+ years of practical Python experience across data science, deep learning, and web development.",
-        "url": "https://eeumairali.github.io",
-        "image": {
-          "@type": "ImageObject",
-          "url": "https://eeumairali.github.io/assets/umair-ali-title.svg",
-          "width": 1200,
-          "height": 630
-        },
-        "email": "eeumairali@gmail.com",
-        "knowsLanguage": ["en", "ur", "pa"],
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Gujrat",
-          "addressRegion": "Punjab",
-          "addressCountry": "PK"
-        },
-        "alumniOf": [
-          {
-            "@type": "EducationalOrganization",
-            "name": "University of Gujrat",
-            "url": "https://uog.edu.pk"
-          },
-          {
-            "@type": "EducationalOrganization",
-            "name": "University of Management and Technology",
-            "url": "https://www.umt.edu.pk"
-          }
-        ],
-        "hasCredential": [
-          {
-            "@type": "EducationalOccupationalCredential",
-            "name": "PhD in Electrical Engineering (in progress)",
-            "credentialCategory": "Doctoral Degree",
-            "recognizedBy": {
-              "@type": "EducationalOrganization",
-              "name": "University of Gujrat"
-            }
-          },
-          {
-            "@type": "EducationalOccupationalCredential",
-            "name": "MS in Electrical Engineering",
-            "credentialCategory": "Master's Degree",
-            "recognizedBy": {
-              "@type": "EducationalOrganization",
-              "name": "University of Gujrat"
-            }
-          },
-          {
-            "@type": "EducationalOccupationalCredential",
-            "name": "AI For Everyone",
-            "credentialCategory": "Professional Certificate",
-            "recognizedBy": {
-              "@type": "Organization",
-              "name": "DeepLearning.AI"
-            }
-          }
-        ],
-        "knowsAbout": [
-          "Python Programming",
-          "Python Tutoring",
-          "Python Teaching for Kids, Beginners, Professionals, and Career Switchers",
-          "One-to-One Online Teaching",
-          "Machine Learning",
-          "Data Science",
-          "Computer Vision",
-          "Deep Learning",
-          "TensorFlow",
-          "PyTorch",
-          "Django",
-          "Flask",
-          "NumPy",
-          "Pandas",
-          "Scikit-learn"
-        ],
-        "sameAs": [
-          "https://github.com/eeumairali",
-          "https://www.linkedin.com/in/eeumairali",
-          "https://preply.com/en/tutor/1484327",
-          "https://www.researchgate.net/profile/Umair-Ali-35"
-        ]
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "@id": "https://eeumairali.github.io/#tutoring-service",
-        "name": "Online Python Tutoring, Python Teaching for Kids, Beginners & Professionals",
-        "description": "One-to-one online Python tutor and Python teacher for kids, beginners, working professionals, and career switchers, from beginner fundamentals through advanced Machine Learning, Data Science, Django web development, and computer vision. 5,000+ lessons taught, 200+ projects completed, and a 5.0-star average rating from 43+ students.",
-        "provider": { "@id": "https://eeumairali.github.io/#person" },
-        "serviceType": "One-to-One Online Tutoring",
-        "areaServed": { "@type": "Place", "name": "Worldwide" },
-        "audience": [
-          { "@type": "Audience", "audienceType": "Kids" },
-          { "@type": "Audience", "audienceType": "Beginners" },
-          { "@type": "Audience", "audienceType": "Professionals" },
-          { "@type": "Audience", "audienceType": "Career Switchers" }
-        ],
-        "availableLanguage": ["English", "Urdu", "Punjabi"],
-        "offers": [
-          {
-            "@type": "Offer",
-            "name": "Trial Lesson",
-            "price": "0",
-            "priceCurrency": "USD",
-            "description": "Free 30-minute trial lesson including skill assessment and learning plan"
-          },
-          {
-            "@type": "Offer",
-            "name": "Standard Lesson",
-            "price": "15",
-            "priceCurrency": "USD",
-            "unitCode": "HUR",
-            "description": "One-on-one Python tutoring session with personalized curriculum and GitHub project tracking"
-          },
-          {
-            "@type": "Offer",
-            "name": "10-Session Package",
-            "price": "100",
-            "priceCurrency": "USD",
-            "description": "10 sessions for the price of 9 — includes priority scheduling and career guidance"
-          }
-        ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5.0",
-          "reviewCount": 43,
-          "bestRating": 5,
-          "worstRating": 1
-        },
-        "url": "https://eeumairali.github.io/#tutoring"
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Python Tutoring Course Offerings by Umair Ali",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "Course",
-              "name": "Python for Beginners & Kids",
-              "description": "Learn Python from scratch — variables, data types, control structures, functions, and basic OOP. One-to-one online lessons ideal for complete beginners, including kids and young learners. Duration: 4–6 weeks.",
-              "provider": { "@id": "https://eeumairali.github.io/#person" },
-              "timeRequired": "P6W",
-              "educationalLevel": "Beginner",
-              "audience": { "@type": "Audience", "audienceType": "Kids, Beginners, and Career Switchers" },
-              "teaches": ["Python basics", "Variables", "Functions", "Object-Oriented Programming"],
-              "hasCourseInstance": {
-                "@type": "CourseInstance",
-                "courseMode": "Online",
-                "instructor": { "@id": "https://eeumairali.github.io/#person" }
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-              "@type": "Course",
-              "name": "Advanced Python",
-              "description": "Decorators, generators, context managers, and advanced OOP for experienced Python developers. Duration: 6–8 weeks.",
-              "provider": { "@id": "https://eeumairali.github.io/#person" },
-              "timeRequired": "P8W",
-              "educationalLevel": "Advanced",
-              "teaches": ["Decorators", "Generators", "Context Managers", "Advanced OOP"],
-              "hasCourseInstance": {
-                "@type": "CourseInstance",
-                "courseMode": "Online",
-                "instructor": { "@id": "https://eeumairali.github.io/#person" }
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "item": {
-              "@type": "Course",
-              "name": "Data Science with Python",
-              "description": "Master NumPy, Pandas, Matplotlib, and Seaborn for data analysis, cleaning, and visualization. Duration: 6–8 weeks.",
-              "provider": { "@id": "https://eeumairali.github.io/#person" },
-              "timeRequired": "P8W",
-              "educationalLevel": "Intermediate",
-              "teaches": ["NumPy", "Pandas", "Matplotlib", "Seaborn", "Data Analysis"],
-              "hasCourseInstance": {
-                "@type": "CourseInstance",
-                "courseMode": "Online",
-                "instructor": { "@id": "https://eeumairali.github.io/#person" }
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "item": {
-              "@type": "Course",
-              "name": "Machine Learning Mastery",
-              "description": "Deep dive into ML algorithms with Scikit-learn, TensorFlow, and PyTorch for real-world AI applications. Duration: 8–12 weeks.",
-              "provider": { "@id": "https://eeumairali.github.io/#person" },
-              "timeRequired": "P12W",
-              "educationalLevel": "Advanced",
-              "teaches": ["Machine Learning", "Scikit-learn", "TensorFlow", "PyTorch", "Deep Learning"],
-              "hasCourseInstance": {
-                "@type": "CourseInstance",
-                "courseMode": "Online",
-                "instructor": { "@id": "https://eeumairali.github.io/#person" }
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 5,
-            "item": {
-              "@type": "Course",
-              "name": "Django Web Development",
-              "description": "Build full-stack web applications with Django, covering databases, authentication, and deployment. Duration: 8–10 weeks.",
-              "provider": { "@id": "https://eeumairali.github.io/#person" },
-              "timeRequired": "P10W",
-              "educationalLevel": "Intermediate",
-              "teaches": ["Django", "Web Development", "PostgreSQL", "Python"],
-              "hasCourseInstance": {
-                "@type": "CourseInstance",
-                "courseMode": "Online",
-                "instructor": { "@id": "https://eeumairali.github.io/#person" }
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 6,
-            "item": {
-              "@type": "Course",
-              "name": "Flask Development",
-              "description": "Lightweight web development with Flask, REST APIs, and microservices architecture. Duration: 6–8 weeks.",
-              "provider": { "@id": "https://eeumairali.github.io/#person" },
-              "timeRequired": "P8W",
-              "educationalLevel": "Intermediate",
-              "teaches": ["Flask", "REST APIs", "Microservices", "Python"],
-              "hasCourseInstance": {
-                "@type": "CourseInstance",
-                "courseMode": "Online",
-                "instructor": { "@id": "https://eeumairali.github.io/#person" }
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 7,
-            "item": {
-              "@type": "Course",
-              "name": "Python Interview Preparation",
-              "description": "Master Python interview questions, coding challenges, data structures, and best practices. Duration: 4–6 weeks.",
-              "provider": { "@id": "https://eeumairali.github.io/#person" },
-              "timeRequired": "P6W",
-              "educationalLevel": "Intermediate",
-              "teaches": ["Python Interview", "Data Structures", "Algorithms", "Coding Challenges"],
-              "hasCourseInstance": {
-                "@type": "CourseInstance",
-                "courseMode": "Online",
-                "instructor": { "@id": "https://eeumairali.github.io/#person" }
-              }
-            }
-          }
-        ]
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "@id": "https://eeumairali.github.io/#website",
-        "name": "Umair Ali — Python Tutor & Python Teacher for Kids, Beginners & Professionals",
-        "url": "https://eeumairali.github.io",
-        "alternateName": "eeumairali",
-        "description": "Personal portfolio and tutoring services site of Umair Ali, PhD scholar and one-to-one online Python tutor and Python teacher for kids, beginners, professionals, and career switchers.",
-        "author": { "@id": "https://eeumairali.github.io/#person" },
-        "inLanguage": "en-US"
-      }
-    ]
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Google Analytics (replace GA_MEASUREMENT_ID with your actual ID) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
-
-    <style>
-        /* ===== Research studio palette ===== */
-        :root {
-            --bg: #f4f1e9;
-            --bg-glow-1: rgba(244, 182, 72, 0.24);
-            --bg-glow-2: rgba(45, 163, 155, 0.16);
-            --bg-glow-3: rgba(16, 42, 67, 0.08);
-            --card-bg: #fffdf8;
-            --card-bg-tint: #e8f1ed;
-            --card-border: rgba(16, 42, 67, 0.14);
-            --text-primary: #102a43;
-            --text-body: #334e68;
-            --text-muted: #627d98;
-            --eyebrow: #2d7c78;
-            --violet: #102a43;
-            --mint: #2d7c78;
-            --coral: #d87941;
-            --yellow: #f4b648;
-            --shadow-ambient: 0 20px 44px -26px rgba(16, 42, 67, 0.34);
-        }
-        @media (prefers-color-scheme: dark) {
-            :root:not([data-theme="light"]) {
-                --bg: #102a43;
-                --bg-glow-1: rgba(244,182,72,0.10);
-                --bg-glow-2: rgba(45,163,155,0.10);
-                --bg-glow-3: rgba(255,253,248,0.08);
-                --card-bg: #173b57;
-                --card-bg-tint: #204d68;
-                --card-border: rgba(255,253,248,0.16);
-                --text-primary: #fffdf8;
-                --text-body: #d9e6ec;
-                --text-muted: #a7bdc9;
-                --eyebrow: #8ed0c3;
-                --violet: #fffdf8;
-                --mint: #8ed0c3;
-                --coral: #f4b648;
-                --yellow: #f4b648;
-                --shadow-ambient: 0 20px 44px -18px rgba(0,0,0,0.48);
-            }
-        }
-        :root[data-theme="dark"] {
-            --bg: #102a43;
-            --bg-glow-1: rgba(244,182,72,0.10);
-            --bg-glow-2: rgba(45,163,155,0.10);
-            --bg-glow-3: rgba(255,253,248,0.08);
-            --card-bg: #173b57;
-            --card-bg-tint: #204d68;
-            --card-border: rgba(255,253,248,0.16);
-            --text-primary: #fffdf8;
-            --text-body: #d9e6ec;
-            --text-muted: #a7bdc9;
-            --eyebrow: #8ed0c3;
-            --violet: #fffdf8;
-            --mint: #8ed0c3;
-            --coral: #f4b648;
-            --yellow: #f4b648;
-            --shadow-ambient: 0 20px 44px -18px rgba(0,0,0,0.48);
-        }
-
-        html { scroll-behavior: smooth; }
-        body {
-            background: var(--bg);
-            color: var(--text-body);
-            font-family: 'Inter', system-ui, sans-serif;
-            font-size: 18px;
-            line-height: 1.65;
-            position: relative;
-            overflow-x: hidden;
-            transition: background 0.3s ease, color 0.3s ease;
-        }
-        h1, h2, h3, h4, .font-display {
-            font-family: 'Fraunces', Georgia, serif;
-            color: var(--text-primary);
-        }
-
-        /* Layered paper texture keeps the long page visually grounded. */
-        .bg-glows {
-            position: fixed;
-            inset: 0;
-            z-index: -2;
-            pointer-events: none;
-            overflow: hidden;
-        }
-        .bg-glows::before,
-        .bg-glows::after,
-        .bg-glows .glow-3 {
-            content: "";
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(90px);
-        }
-        .bg-glows::before {
-            width: 560px; height: 560px;
-            top: -220px; left: -160px;
-            background: var(--bg-glow-1);
-        }
-        .bg-glows::after {
-            width: 480px; height: 480px;
-            top: -160px; right: -200px;
-            background: var(--bg-glow-2);
-        }
-        .bg-glows .glow-3 {
-            width: 460px; height: 460px;
-            bottom: -220px; left: 30%;
-            background: var(--bg-glow-3);
-        }
-
-        body::after { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .24; z-index: -1; background-image: linear-gradient(rgba(16,42,67,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(16,42,67,.035) 1px, transparent 1px); background-size: 34px 34px; }
-
-        .eyebrow {
-            font-size: 11px;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--eyebrow);
-            font-weight: 600;
-        }
-
-        .glass-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 0.35rem;
-            box-shadow: var(--shadow-ambient);
-            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-        .glass-card:hover {
-            transform: translateY(-2px);
-            border-color: var(--violet);
-            box-shadow: 0 18px 40px -20px rgba(102,73,48,0.30), var(--shadow-ambient);
-        }
-
-        .text-gradient {
-            color: var(--violet);
-        }
-
-        .btn-primary {
-            background: var(--violet);
-            color: #fff;
-            box-shadow: 0 10px 24px -10px rgba(102,73,48,0.45);
-            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            background: var(--coral);
-            box-shadow: 0 14px 30px -8px rgba(102,73,48,0.5);
-        }
-        .btn-secondary {
-            background: transparent;
-            border: 1px solid var(--card-border);
-            color: var(--text-primary);
-            transition: border-color 0.2s ease, background 0.2s ease;
-        }
-        .btn-secondary:hover {
-            border-color: var(--violet);
-            background: rgba(102,73,48,0.06);
-        }
-
-        .avatar-mark {
-            background: var(--violet);
-            color: #fff;
-        }
-
-        .chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            border-radius: 9999px;
-            border: 1px solid var(--card-border);
-            background: var(--card-bg-tint);
-            color: var(--text-body);
-            padding: 0.35rem 0.9rem;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .status-dot {
-            width: 8px; height: 8px;
-            border-radius: 50%;
-            background: var(--violet);
-            box-shadow: 0 0 0 4px rgba(102,73,48,0.14), 0 0 10px 1px rgba(102,73,48,0.35);
-            display: inline-block;
-        }
-
-        .nav-glass {
-            background: var(--bg);
-            border-bottom: 1px solid var(--card-border);
-        }
-        .nav-link {
-            color: var(--text-muted);
-            transition: color 0.2s ease;
-        }
-        .nav-link:hover { color: var(--text-primary); }
-
-        .theme-toggle {
-            width: 38px; height: 38px;
-            border-radius: 9999px;
-            border: 1px solid var(--card-border);
-            background: var(--card-bg-tint);
-            display: flex; align-items: center; justify-content: center;
-            color: var(--text-primary);
-            cursor: pointer;
-            transition: border-color 0.2s ease, background 0.2s ease;
-        }
-        .theme-toggle:hover { border-color: var(--violet); }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.35s ease-out, transform 0.35s ease-out;
-        }
-        .fade-in-visible { opacity: 1; transform: translateY(0); }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--text-primary);
-        }
-
-        .hero-shell { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr .85fr; gap: 4rem; align-items: center; }
-        .hero-kicker { display: inline-flex; align-items: center; gap: .65rem; color: var(--eyebrow); font-size: .78rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
-        .hero-kicker::before { content: ""; width: 34px; height: 2px; background: var(--coral); }
-        .hero-title { font-size: clamp(3.4rem, 7vw, 6.8rem); line-height: .95; letter-spacing: -.03em; margin: 1.35rem 0; }
-        .hero-title em { color: var(--coral); font-style: normal; }
-        .hero-title a { display: inline-block; max-width: 100%; color: var(--yellow); font-size: clamp(1.2rem, 2.5vw, 2rem); line-height: 1.15; letter-spacing: 0; overflow-wrap: anywhere; text-decoration: underline; text-decoration-thickness: .08em; text-underline-offset: .12em; }
-        .hero-title a:hover { color: var(--coral); }
-        .hero-panel { background: var(--text-primary); color: var(--bg); padding: 2rem; border-radius: .35rem; box-shadow: 18px 18px 0 var(--yellow); }
-        .hero-panel h2, .hero-panel p { color: var(--bg); }
-        .hero-panel h2 { font-size: 1.8rem; line-height: 1.05; }
-        .proof-strip { border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); }
-        .repo-card { min-height: 250px; display: flex; flex-direction: column; justify-content: space-between; }
-        .repo-card .repo-meta { color: var(--text-muted); font-size: .82rem; }
-        @media (max-width: 800px) { .hero-shell { grid-template-columns: 1fr; gap: 2rem; } .hero-title { font-size: clamp(3rem, 16vw, 5rem); } .hero-panel { box-shadow: 10px 10px 0 var(--yellow); } }
-
-        ::selection { background: rgba(102,73,48,0.22); }
-    </style>
+/* lists */
+.pubs { padding: 4px 22px; }
+.pub { display: grid; grid-template-columns: 64px 1fr; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.pub:last-child { border-bottom: 0; }
+.pub .year { font: 600 20px Fraunces, Georgia, serif; color: var(--muted); }
+.pub h3 { font-size: 19px; }
+.pub .venue { margin: 4px 0 8px; color: var(--muted); font-style: italic; }
+.pub .about { margin: 0 0 10px; color: var(--muted); font-size: 15px; }
+.pub .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.pub .actions .btn { padding: 5px 11px; font-size: 13px; }
+.tl { list-style: none; margin: 0; padding: 0; }
+.tl li { display: grid; grid-template-columns: 150px 1fr; gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.tl li:last-child { border-bottom: 0; }
+.tl .when { color: var(--muted); font-size: 14px; padding-top: 2px; }
+.tl h3 { font: 600 17px Inter, sans-serif; }
+.tl .where { color: var(--accent); font-weight: 500; font-size: 15px; }
+.tl p, .tl ul { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+.tl ul { padding-left: 18px; }
+@media (max-width: 640px) { .tl li { grid-template-columns: 1fr; gap: 2px; } .pub { grid-template-columns: 1fr; gap: 4px; } }
+.cols3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 860px) { .cols3 { grid-template-columns: 1fr; } }
+.cols3 h3 { font: 600 15px Inter, sans-serif; margin-bottom: 4px; }
+.cols3 p { margin: 0; color: var(--muted); font-size: 15px; }
+.stat { font: 600 28px Fraunces, Georgia, serif; color: var(--accent); }
+.certs { columns: 2; column-gap: 28px; padding-left: 18px; margin: 0; color: var(--muted); font-size: 15px; }
+.certs li { break-inside: avoid; margin-bottom: 6px; }
+@media (max-width: 640px) { .certs { columns: 1; } }
+.contact { text-align: center; padding: 44px 22px; }
+.contact h2 { font-size: 30px; }
+.contact .links { justify-content: center; }
+footer { padding: 36px 16px 48px; text-align: center; color: var(--muted); font-size: 13px; }
+.theme { border: 0; background: none; color: var(--muted); cursor: pointer; font-size: 18px; padding: 4px; }
+</style>
 </head>
 <body>
+<a class="skip" href="#research">Skip to content</a>
 
-    <div class="bg-glows" aria-hidden="true">
-        <div class="glow-3"></div>
-    </div>
-
-    <nav class="w-full nav-glass fixed top-0 left-0 z-50">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="flex items-center gap-2 font-display text-xl font-semibold" style="color:var(--text-primary)">
-                <img src="/assets/umair-ali-logo.svg" alt="" width="36" height="36" class="shrink-0" aria-hidden="true">
-                Umair Ali
-            </a>
-            <div class="flex items-center gap-2 md:hidden">
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
-                <button id="mobile-menu-button" class="focus:outline-none" style="color:var(--text-primary)">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-            <ul class="hidden md:flex items-center space-x-1">
-                <li><a href="#about" class="nav-link px-3 py-2 rounded text-sm font-medium">About</a></li>
-                <li><a href="#tutoring" class="nav-link px-3 py-2 rounded text-sm font-medium">Tutoring</a></li>
-                <li><a href="#experience" class="nav-link px-3 py-2 rounded text-sm font-medium">Experience</a></li>
-                <li><a href="#education" class="nav-link px-3 py-2 rounded text-sm font-medium">Education</a></li>
-                <li><a href="#publications" class="nav-link px-3 py-2 rounded text-sm font-medium">Publications</a></li>
-                <li><a href="#skills" class="nav-link px-3 py-2 rounded text-sm font-medium">Skills</a></li>
-                <li><a href="#projects" class="nav-link px-3 py-2 rounded text-sm font-medium">Projects</a></li>
-                <li><a href="https://umaircodelab.com" target="_blank" rel="noopener noreferrer" class="nav-link px-3 py-2 rounded text-sm font-medium">Study Desk <i class="fas fa-arrow-up-right-from-square text-xs ml-1"></i></a></li>
-                <li><a href="#contact" class="btn-primary px-4 py-2 rounded-full text-sm font-semibold ml-1">Contact</a></li>
-                <li><button id="theme-toggle-desktop" class="theme-toggle ml-1" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
-            </ul>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden nav-glass">
-            <ul class="flex flex-col items-center py-4 space-y-1">
-                <li><a href="#about" class="nav-link block py-2">About</a></li>
-                <li><a href="#tutoring" class="nav-link block py-2">Tutoring</a></li>
-                <li><a href="#experience" class="nav-link block py-2">Experience</a></li>
-                <li><a href="#education" class="nav-link block py-2">Education</a></li>
-                <li><a href="#publications" class="nav-link block py-2">Publications</a></li>
-                <li><a href="#skills" class="nav-link block py-2">Skills</a></li>
-                <li><a href="#projects" class="nav-link block py-2">Projects</a></li>
-                <li><a href="https://umaircodelab.com" target="_blank" rel="noopener noreferrer" class="nav-link block py-2">Study Desk <i class="fas fa-arrow-up-right-from-square text-xs ml-1"></i></a></li>
-                <li><a href="#contact" class="btn-primary px-6 py-2 rounded-full font-semibold inline-block mt-2">Contact</a></li>
-            </ul>
-        </div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Umair Ali</a>
+    <nav aria-label="Sections">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <button class="theme" type="button" id="theme" aria-label="Switch between light and dark">◐</button>
+    <a class="btn btn-main" href="/cv.html">CV</a>
+  </div>
+</header>
 
-    <section id="home" class="min-h-screen flex items-center pt-28 pb-16 relative">
-        <div class="hero-shell px-6 fade-in">
-            <div>
-                <span class="hero-kicker">Python educator · AI researcher · builder</span>
-                <h1 class="hero-title">Learn by building.<br><em>Grow with confidence.</em><br><a href="https://umaircodelab.com" target="_blank" rel="noopener noreferrer">Visit umaircodelab.com</a></h1>
-                <p class="max-w-2xl text-lg md:text-xl mb-8" style="color:var(--text-body)">I'm Umair Ali, a PhD scholar and one-to-one Python teacher helping curious people turn fundamentals into working software, useful research, and confident careers.</p>
-                <div class="flex flex-wrap items-center gap-4">
-                    <a href="#projects" class="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold">Explore my work <i class="fas fa-arrow-down text-xs"></i></a>
-                    <a href="https://wa.me/923207651231?text=Hello%20Umair%2C%20I%27d%20like%20to%20book%20a%20trial%20lesson." target="_blank" rel="noopener noreferrer" class="btn-secondary inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold"><i class="fab fa-whatsapp"></i> Book a trial</a>
-                    <a href="mailto:eeumairali@gmail.com?subject=Python%20Tutoring%20Booking" class="btn-secondary inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold"><i class="fas fa-envelope"></i> Email instead</a>
-                </div>
-                <div class="flex flex-wrap gap-3 mt-8">
-                    <span class="chip">Python &amp; Django</span><span class="chip">Computer Vision</span><span class="chip">Machine Learning</span><span class="chip">Project-led teaching</span>
-                </div>
-            </div>
-            <aside class="hero-panel">
-                <p class="eyebrow mb-5" style="color:var(--yellow)">Currently exploring</p>
-                <h2>Computer vision for precision livestock research.</h2>
-                <p class="mt-5 text-sm leading-relaxed">My research connects deep learning with real-world monitoring. The same practical mindset shapes every lesson and every public repository.</p>
-                <div class="mt-8 pt-5" style="border-top:1px solid rgba(255,253,248,.22)">
-                    <div class="flex justify-between text-sm"><span>Lessons taught</span><strong>5,000+</strong></div>
-                    <div class="flex justify-between text-sm mt-3"><span>Student rating</span><strong>5.0 / 5</strong></div>
-                    <div class="flex justify-between text-sm mt-3"><span>Public repositories</span><strong>30+</strong></div>
-                </div>
-            </aside>
+<main id="top" class="wrap">
+  <div class="hero">
+    <div>
+      <p class="eyebrow">PhD Researcher · Electrical Engineering</p>
+      <h1>Umair Ali</h1>
+      <p class="lead">I build <b>computer vision systems that watch over livestock</b>: detecting each animal, following it over time and recognising what it is doing, so farmers can spot illness, stress and feeding problems early.
+        PhD at the <b>Intelligent Systems Lab, University of Gujrat</b>, supervised by Dr. Wasif Muhammad.</p>
+      <div class="links">
+        <a class="btn btn-main" href="mailto:eeumairali@gmail.com">✉ eeumairali@gmail.com</a>
+        <a class="btn" href="/cv.html">📄 CV</a>
+        <a class="btn" href="https://www.linkedin.com/in/eeumairali" rel="me noopener" target="_blank">LinkedIn</a>
+        <a class="btn" href="https://github.com/eeumairali" rel="me noopener" target="_blank">GitHub</a>
+        <a class="btn" href="https://www.researchgate.net/profile/Umair-Ali-35" rel="me noopener" target="_blank">ResearchGate</a>
+      </div>
+    </div>
+    <!-- To show a photo: put it at /assets/umair.jpg and replace "UA" with <img src="/assets/umair.jpg" alt="Umair Ali"> -->
+    <div class="portrait" aria-hidden="true">UA</div>
+  </div>
+
+  <div class="facts" aria-label="At a glance">
+    <div><b>2024–27</b><span>PhD, Electrical Engineering</span></div>
+    <div><b>2</b><span>journal papers</span></div>
+    <div><b>130+</b><span>ML &amp; software projects delivered</span></div>
+    <div><b>5,000+</b><span>hours of one-to-one teaching</span></div>
+  </div>
+
+  <section id="research" aria-labelledby="research-h">
+    <div class="h2row"><h2 id="research-h">Research</h2><small>Computer vision for precision livestock</small></div>
+    <div class="grid2">
+      <div>
+        <p style="margin-top:0">Watching a herd by eye is slow, and changes in how an animal moves, eats or rests are often the first sign that something is wrong.
+          My PhD uses cameras and deep learning to do this watching continuously: <b>which animal is it, where has it been, and what is it doing?</b></p>
+        <ol class="steps">
+          <li><div><b>Detect</b>Find every animal, and its face, in each video frame with one-stage detectors from the YOLO family. My first PhD paper fine-tunes YOLOv8 for cow faces.</div></li>
+          <li><div><b>Track</b>Keep the same identity on each animal from frame to frame, combining detection with re-identification features.</div></li>
+          <li><div><b>Recognise behaviour</b>Turn each animal's track into behaviour – standing, lying, walking, feeding – for real-time monitoring.</div></li>
+        </ol>
+        <ul class="pills" aria-label="Methods">
+          <li>Object detection</li><li>Multi-object tracking</li><li>Re-identification</li><li>Behaviour recognition</li><li>Deep learning</li><li>Real-time monitoring</li>
+        </ul>
+        <p class="muted" style="margin-top:18px">Before the PhD, my MS research was in robotics: fusing several sensors with a neural network so an underwater robot can work out where it is.</p>
+      </div>
+      <figure class="card demo">
+        <canvas id="herd" width="640" height="420" role="img" aria-label="Animated illustration: cows seen from above, each with a detection box, a track ID and a behaviour label."></canvas>
+        <div class="demo-bar" role="group" aria-label="Show layers">
+          <button type="button" data-layer="detect" aria-pressed="true">1 · Detect</button>
+          <button type="button" data-layer="track" aria-pressed="true">2 · Track</button>
+          <button type="button" data-layer="behave" aria-pressed="true">3 · Behaviour</button>
+          <span class="demo-note">Illustration – not real model output</span>
         </div>
-    </section>
+      </figure>
+    </div>
+  </section>
 
-    <section class="proof-strip py-5" aria-label="Highlights">
-        <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-5 text-sm">
-            <div><strong style="color:var(--text-primary)">7+ years</strong><span class="block" style="color:var(--text-muted)">building with Python</span></div>
-            <div><strong style="color:var(--text-primary)">43+ reviews</strong><span class="block" style="color:var(--text-muted)">from learners worldwide</span></div>
-            <div><strong style="color:var(--text-primary)">PhD research</strong><span class="block" style="color:var(--text-muted)">vision + livestock behavior</span></div>
-            <div><strong style="color:var(--text-primary)">Gujrat, Pakistan</strong><span class="block" style="color:var(--text-muted)">teaching globally online</span></div>
+  <section id="publications" aria-labelledby="pub-h">
+    <div class="h2row"><h2 id="pub-h">Publications</h2><small>Journal papers</small></div>
+    <div class="card pubs">
+      <article class="pub">
+        <div class="year">2025</div>
+        <div>
+          <h3>Cow Face Detection for Precision Livestock Management using YOLOv8</h3>
+          <p class="venue">International Journal of Innovations in Science and Technology</p>
+          <p class="about">Fine-tunes YOLOv8 from COCO-pretrained weights on mixed datasets to find cow faces – the first step towards identifying and monitoring individual animals.</p>
+          <div class="actions">
+            <a class="btn" href="https://www.researchgate.net/publication/390810418_Cow_Face_Detection_for_Precision_Livestock_Management_using_YOLOv8" target="_blank" rel="noopener">Read on ResearchGate</a>
+            <button class="btn" type="button" data-cite="Ali, U. (2025). Cow Face Detection for Precision Livestock Management using YOLOv8. International Journal of Innovations in Science and Technology.">Copy citation</button>
+          </div>
         </div>
-    </section>
-
-    <section id="about" class="container mx-auto px-6 py-20 fade-in relative">
-        <p class="eyebrow text-center mb-3">About</p>
-        <h2 class="section-title">Why Choose Me as Your Python Tutor?</h2>
-        <div class="max-w-4xl mx-auto text-center">
-             <p class="text-lg mb-10" style="color:var(--text-body)">I'm Umair Ali — a PhD scholar in Electrical Engineering researching livestock behavior recognition, and a one-to-one online Python tutor and Python teacher for kids, beginners, professionals, and career switchers. I bring a unique blend of academic rigor and practical expertise to programming education. With 7+ years of Python experience and 200+ completed projects across various platforms, I've successfully taught 5,000+ lessons to students worldwide — from young kids taking their first coding class to professionals switching careers — maintaining a perfect 5.0-star rating on Preply.</p>
-
-             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 text-left">
-                 <div class="glass-card p-6">
-                     <h3 class="text-xl font-semibold mb-4" style="color:var(--mint)"><i class="fas fa-graduation-cap mr-2"></i>My Teaching Method</h3>
-                     <ul class="space-y-2" style="color:var(--text-body)">
-                         <li>• <strong style="color:var(--text-primary)">Screen Sharing:</strong> Students code while I guide step-by-step</li>
-                         <li>• <strong style="color:var(--text-primary)">GitHub Integration:</strong> Personal repositories for each student</li>
-                         <li>• <strong style="color:var(--text-primary)">Personalized Plans:</strong> Custom learning sheets for progress tracking</li>
-                         <li>• <strong style="color:var(--text-primary)">Practical Focus:</strong> Learn by building real projects and applications</li>
-                     </ul>
-                 </div>
-                 <div class="glass-card p-6">
-                     <h3 class="text-xl font-semibold mb-4" style="color:var(--violet)"><i class="fas fa-rocket mr-2"></i>What Makes Me Different</h3>
-                     <ul class="space-y-2" style="color:var(--text-body)">
-                         <li>• <strong style="color:var(--text-primary)">Diverse Experience:</strong> Kids, college students, professionals, business people</li>
-                         <li>• <strong style="color:var(--text-primary)">Multiple Languages:</strong> Python, HTML, CSS, JavaScript, MATLAB, C, Arduino</li>
-                         <li>• <strong style="color:var(--text-primary)">Fast Response:</strong> Usually replies in less than an hour</li>
-                         <li>• <strong style="color:var(--text-primary)">Patient Approach:</strong> Especially enjoy guiding young minds and beginners</li>
-                     </ul>
-                 </div>
-             </div>
-
-             <p class="text-lg mb-10" style="color:var(--text-body)">Since 2018, I've been working on Python projects covering various libraries for data science, machine learning, and web development. Having completed my Masters degree, I enrolled in a PhD program with the goal of pursuing a Post-Doc. My research background combined with hands-on tutoring experience of 5,000+ lessons and 200+ technical projects gives me unique insights into both theoretical concepts and practical applications.</p>
-
-             <div class="glass-card p-6 mb-10">
-                 <h3 class="text-xl font-semibold mb-6" style="color:var(--coral)"><i class="fas fa-chart-line mr-2"></i>Proven Track Record</h3>
-                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                     <div>
-                         <div class="text-3xl font-display font-semibold text-gradient">5,000+</div>
-                         <div class="text-sm mt-1" style="color:var(--text-muted)">Lessons Taught</div>
-                     </div>
-                     <div>
-                         <div class="text-3xl font-display font-semibold text-gradient">200+</div>
-                         <div class="text-sm mt-1" style="color:var(--text-muted)">Projects Completed</div>
-                     </div>
-                     <div>
-                         <div class="text-3xl font-display font-semibold text-gradient">5.0★</div>
-                         <div class="text-sm mt-1" style="color:var(--text-muted)">Student Rating</div>
-                     </div>
-                     <div>
-                         <div class="text-3xl font-display font-semibold text-gradient">188</div>
-                         <div class="text-sm mt-1" style="color:var(--text-muted)">LinkedIn Followers</div>
-                     </div>
-                 </div>
-             </div>
-
-             <div class="mt-12">
-                 <h3 class="text-xl font-semibold text-center mb-6" style="color:var(--text-primary)">Programming Languages &amp; Technologies I Teach</h3>
-                 <div class="flex flex-wrap justify-center gap-3">
-                     <span class="chip">Python (Advanced)</span>
-                     <span class="chip">Machine Learning</span>
-                     <span class="chip">Pandas &amp; NumPy</span>
-                     <span class="chip">SQL</span>
-                     <span class="chip">JavaScript</span>
-                     <span class="chip">TensorFlow</span>
-                     <span class="chip">Data Visualization</span>
-                     <span class="chip">Deep Learning</span>
-                     <span class="chip">R Programming</span>
-                     <span class="chip">MATLAB</span>
-                     <span class="chip">Git &amp; GitHub</span>
-                 </div>
-             </div>
+      </article>
+      <article class="pub">
+        <div class="year">2021</div>
+        <div>
+          <h3>Multi-sensor fusion for underwater robot self-localization using PC/BC-DIM neural network</h3>
+          <p class="venue">Sensor Review, Emerald Publishing</p>
+          <p class="about">A predictive-coding neural network (PC/BC-DIM) fuses readings from several sensors so an underwater robot can estimate its own position.</p>
+          <div class="actions">
+            <a class="btn" href="https://doi.org/10.1108/SR-03-2021-0104" target="_blank" rel="noopener">DOI: 10.1108/SR-03-2021-0104</a>
+            <button class="btn" type="button" data-cite="Ali, U. (2021). Multi-sensor fusion for underwater robot self-localization using PC/BC-DIM neural network. Sensor Review. https://doi.org/10.1108/SR-03-2021-0104">Copy citation</button>
+          </div>
         </div>
-    </section>
+      </article>
+    </div>
+  </section>
 
-    <!-- Python Tutoring Services Section -->
-    <section id="tutoring" class="py-20 fade-in relative">
-        <div class="container mx-auto px-6">
-            <p class="eyebrow text-center mb-3">Services</p>
-            <h2 class="section-title">Python Tutoring Services</h2>
+  <section id="experience" aria-labelledby="exp-h">
+    <div class="h2row"><h2 id="exp-h">Experience</h2></div>
+    <ol class="tl">
+      <li><div class="when">2024 – present</div><div>
+        <h3>Research Scholar</h3><div class="where">Intelligent Systems Lab, University of Gujrat</div>
+        <p>Livestock recognition and management with computer vision and AI, under the supervision of Dr. Wasif Muhammad.</p></div></li>
+      <li><div class="when">2022 – 2025</div><div>
+        <h3>Machine Learning Engineer (freelance)</h3><div class="where">Upwork · remote</div>
+        <ul><li>Machine learning models, data analysis and computer vision applications in TensorFlow and PyTorch.</li><li>30+ projects with a 95 % client-satisfaction rate.</li></ul></div></li>
+      <li><div class="when">2019 – present</div><div>
+        <h3>Python &amp; MATLAB Developer (freelance)</h3><div class="where">Fiverr and self-employed · remote</div>
+        <ul><li>100+ projects: data analysis and visualisation, automation and data pipelines, scientific and engineering computing.</li><li>Converting MATLAB code to Python for speed and maintainability.</li></ul></div></li>
+      <li><div class="when">2022 – present</div><div>
+        <h3>Python &amp; Machine Learning Tutor</h3><div class="where">Preply and Umair Code Lab · online</div>
+        <p>One-to-one lessons from Python basics to data science, machine learning and web development, for students in 20+ countries.</p></div></li>
+      <li><div class="when">2021 – 2022</div><div>
+        <h3>Associate Engineer</h3><div class="where">Mezino Technologies · Lahore</div>
+        <ul><li>Embedded systems for two-way communication and HMI control (Python, PyQt5, eRPC, Raspberry Pi).</li><li>Web scrapers that collected training data for ML models (Scrapy, Selenium, PostgreSQL, MongoDB).</li><li>Django web applications and Next.js front ends.</li></ul></div></li>
+      <li><div class="when">2018</div><div>
+        <h3>Intern</h3><div class="where">Servis Industries · Gujrat</div>
+        <p>PLC programming, embedded-systems troubleshooting and industrial automation in a manufacturing plant.</p></div></li>
+    </ol>
+  </section>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
-                <!-- Course Offerings -->
-                <div>
-                    <h3 class="text-2xl font-semibold mb-6" style="color:var(--text-primary)"><i class="fas fa-book-open mr-2" style="color:var(--violet)"></i>Course Offerings</h3>
-                    <div class="space-y-4">
-                        <div class="glass-card p-4">
-                            <h4 class="font-semibold mb-2" style="color:var(--mint)">Python for Beginners</h4>
-                            <p class="text-sm mb-2" style="color:var(--text-muted)">Perfect for complete beginners. Learn variables, data types, control structures, functions, and basic OOP.</p>
-                            <span class="chip text-xs">4-6 weeks</span>
-                        </div>
-                        <div class="glass-card p-4">
-                            <h4 class="font-semibold mb-2" style="color:var(--coral)">Advanced Python</h4>
-                            <p class="text-sm mb-2" style="color:var(--text-muted)">Decorators, generators, context managers, and advanced OOP concepts for experienced developers.</p>
-                            <span class="chip text-xs">6-8 weeks</span>
-                        </div>
-                        <div class="glass-card p-4">
-                            <h4 class="font-semibold mb-2" style="color:var(--violet)">Data Science with Python</h4>
-                            <p class="text-sm mb-2" style="color:var(--text-muted)">Master NumPy, Pandas, Matplotlib, and Seaborn for data analysis and visualization.</p>
-                            <span class="chip text-xs">6-8 weeks</span>
-                            <ul class="text-xs mt-2 space-y-0.5" style="color:var(--text-muted)">
-                                <li><strong style="color:var(--text-body)">NumPy:</strong> 1-2 weeks</li>
-                                <li><strong style="color:var(--text-body)">Pandas:</strong> 2-3 weeks</li>
-                                <li><strong style="color:var(--text-body)">Matplotlib &amp; Seaborn:</strong> 1 week</li>
-                            </ul>
-                        </div>
-                        <div class="glass-card p-4">
-                            <h4 class="font-semibold mb-2" style="color:var(--mint)">Machine Learning Mastery</h4>
-                            <p class="text-sm mb-2" style="color:var(--text-muted)">Deep dive into ML algorithms, Scikit-learn, TensorFlow, and PyTorch for AI applications.</p>
-                            <span class="chip text-xs">8-12 weeks</span>
-                            <ul class="text-xs mt-2 space-y-0.5" style="color:var(--text-muted)">
-                                <li><strong style="color:var(--text-body)">Scikit-learn:</strong> 2-3 weeks</li>
-                                <li><strong style="color:var(--text-body)">TensorFlow:</strong> 2-3 weeks</li>
-                                <li><strong style="color:var(--text-body)">PyTorch:</strong> 2-3 weeks</li>
-                            </ul>
-                        </div>
-                        <div class="glass-card p-4">
-                            <h4 class="font-semibold mb-2" style="color:var(--coral)">Django Web Development</h4>
-                            <p class="text-sm mb-2" style="color:var(--text-muted)">Build full-stack web applications using Django framework, including databases and deployment.</p>
-                            <span class="chip text-xs">8-10 weeks</span>
-                        </div>
-                        <div class="glass-card p-4">
-                            <h4 class="font-semibold mb-2" style="color:var(--violet)">Flask Development</h4>
-                            <p class="text-sm mb-2" style="color:var(--text-muted)">Lightweight web development with Flask, APIs, and microservices architecture.</p>
-                            <span class="chip text-xs">6-8 weeks</span>
-                        </div>
-                        <div class="glass-card p-4">
-                            <h4 class="font-semibold mb-2" style="color:var(--mint)">Python Interview Prep</h4>
-                            <p class="text-sm mb-2" style="color:var(--text-muted)">Master common Python interview questions, coding challenges, and best practices.</p>
-                            <span class="chip text-xs">4-6 weeks</span>
-                        </div>
-                        <div class="glass-card p-4">
-                            <h4 class="font-semibold mb-2" style="color:var(--text-primary)">Other Languages</h4>
-                            <p class="text-sm mb-2" style="color:var(--text-muted)">HTML, CSS, JavaScript, MATLAB, C Programming, Arduino, C++, Java (beginners).</p>
-                            <span class="chip text-xs">Flexible</span>
-                        </div>
-                    </div>
-                </div>
+  <section id="education" aria-labelledby="edu-h">
+    <div class="h2row"><h2 id="edu-h">Education</h2></div>
+    <ol class="tl">
+      <li><div class="when">2024 – 2027 (expected)</div><div>
+        <h3>PhD, Electrical Engineering</h3><div class="where">University of Gujrat</div>
+        <p>Computer vision and AI for livestock behaviour recognition. Supervisor: Dr. Wasif Muhammad.</p></div></li>
+      <li><div class="when">2018 – 2020</div><div>
+        <h3>MS, Electrical Engineering</h3><div class="where">University of Gujrat</div>
+        <p>Thesis: <i>Multisensory Fusion for Underwater Robot Localization and Exploration</i>. CGPA 3.43.</p></div></li>
+      <li><div class="when">2014 – 2018</div><div>
+        <h3>BS, Electrical Engineering</h3><div class="where">University of Management and Technology, Lahore</div>
+        <p>Final-year project: an automated petrol-pump system.</p></div></li>
+    </ol>
+  </section>
 
-                <!-- Learning Path -->
-                <div>
-                    <h3 class="text-2xl font-semibold mb-6" style="color:var(--text-primary)"><i class="fas fa-route mr-2" style="color:var(--mint)"></i>Personalized Learning Path</h3>
-                    <div class="glass-card p-6">
-                        <div class="space-y-5">
-                            <div class="flex items-start gap-4">
-                                <div class="avatar-mark w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shrink-0">1</div>
-                                <div>
-                                    <h4 class="font-semibold" style="color:var(--text-primary)">Assessment &amp; Goal Setting</h4>
-                                    <p class="text-sm" style="color:var(--text-muted)">Free consultation to understand your current level and objectives</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="avatar-mark w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shrink-0">2</div>
-                                <div>
-                                    <h4 class="font-semibold" style="color:var(--text-primary)">Customized Curriculum</h4>
-                                    <p class="text-sm" style="color:var(--text-muted)">Tailored learning plan based on your goals and schedule</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="avatar-mark w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shrink-0">3</div>
-                                <div>
-                                    <h4 class="font-semibold" style="color:var(--text-primary)">Interactive Sessions</h4>
-                                    <p class="text-sm" style="color:var(--text-muted)">1-on-1 online sessions with practical coding exercises</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="avatar-mark w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shrink-0">4</div>
-                                <div>
-                                    <h4 class="font-semibold" style="color:var(--text-primary)">Project-Based Learning</h4>
-                                    <p class="text-sm" style="color:var(--text-muted)">Build real-world projects for your portfolio</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="avatar-mark w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shrink-0">5</div>
-                                <div>
-                                    <h4 class="font-semibold" style="color:var(--text-primary)">Career Guidance</h4>
-                                    <p class="text-sm" style="color:var(--text-muted)">Resume review, interview prep, and job search strategy</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <section id="teaching" aria-labelledby="teach-h">
+    <div class="h2row"><h2 id="teach-h">Teaching &amp; open tools</h2><small><a href="https://umaircodelab.com" target="_blank" rel="noopener">umaircodelab.com →</a></small></div>
+    <div class="cols3">
+      <div class="card"><div class="stat">5,000+</div><h3>hours taught one-to-one</h3><p>Python, data science, machine learning and computer vision, rated 5.0 / 5 by students.</p></div>
+      <div class="card"><div class="stat">35</div><h3>interactive labs built</h3><p>I designed and coded a teaching platform where students practise in the browser: computer vision, image processing, signals, control, robotics and more.</p></div>
+      <div class="card"><div class="stat">YOLO → ReID</div><h3>my research, taught</h3><p>A Vision AI lab that explains attention, YOLO detection, NMS, re-identification and tracking step by step – the methods behind my PhD.</p></div>
+    </div>
+  </section>
 
-                    <div class="glass-card p-6 mt-6">
-                        <div class="flex items-center gap-3 mb-2">
-                            <i class="fas fa-book-reader" style="color:var(--mint)"></i>
-                            <h4 class="font-semibold" style="color:var(--text-primary)">Free Study Desk</h4>
-                        </div>
-                        <p class="text-sm mb-4" style="color:var(--text-muted)">Explore free, self-paced Python articles, or sign in to your personal student dashboard to track progress from our 1-on-1 sessions.</p>
-                        <div class="flex flex-wrap gap-3">
-                            <a href="https://umaircodelab.com/#domains" target="_blank" rel="noopener noreferrer" class="btn-secondary inline-block px-5 py-2 rounded-full text-sm font-semibold">Tutorials for All <i class="fas fa-arrow-up-right-from-square text-xs ml-1"></i></a>
-                            <a href="https://umaircodelab.com/accounts/login/" target="_blank" rel="noopener noreferrer" class="btn-primary inline-block px-5 py-2 rounded-full text-sm font-semibold">Tutorial for Registered Students <i class="fas fa-arrow-up-right-from-square text-xs ml-1"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <section id="skills" aria-labelledby="skills-h">
+    <div class="h2row"><h2 id="skills-h">Skills</h2></div>
+    <div class="cols3">
+      <div class="card"><h3>Computer vision &amp; ML</h3><p>PyTorch, TensorFlow / Keras, YOLO (Ultralytics), OpenCV, scikit-learn, NumPy, pandas, Matplotlib</p></div>
+      <div class="card"><h3>Programming</h3><p>Python (advanced), MATLAB (advanced), C, JavaScript; Django, Flask, PyQt5; PostgreSQL, MongoDB, SQLite; Git</p></div>
+      <div class="card"><h3>Robotics &amp; embedded</h3><p>ROS, Raspberry Pi, Arduino, PLC programming, sensor fusion, PCB design and circuit simulation</p></div>
+    </div>
+    <h3 style="font:600 16px Inter,sans-serif;margin:26px 0 10px">Selected certifications</h3>
+    <ul class="certs">
+      <li>AI For Everyone – DeepLearning.AI (2025)</li>
+      <li>Introduction to Programming with MATLAB – Vanderbilt University (2024)</li>
+      <li>Image Denoising Using AutoEncoders in Keras – Coursera (2023)</li>
+      <li>Python for Machine Learning &amp; Data Science Masterclass – Udemy (2022)</li>
+      <li>Associate Artificial Intelligence &amp; IoT – DigiPAKISTAN (2022)</li>
+      <li>Foundations of Machine Learning; Python for Everybody</li>
+      <li>Introduction to Cloud Computing; Cloud Development with HTML, CSS, JavaScript</li>
+    </ul>
+    <p class="muted" style="font-size:15px;margin-top:14px">Languages: English (professional), Urdu (native), Punjabi.</p>
+  </section>
 
-            <!-- Pricing & Packages -->
-            <div class="mb-16">
-                <h3 class="text-2xl font-semibold text-center mb-8" style="color:var(--text-primary)"><i class="fas fa-sack-dollar mr-2" style="color:var(--coral)"></i>Affordable Pricing</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                    <div class="glass-card p-6 text-center">
-                        <h4 class="font-bold text-xl mb-2" style="color:var(--mint)">Trial Lesson</h4>
-                        <div class="text-3xl font-display font-semibold mb-2" style="color:var(--text-primary)">Free</div>
-                        <p class="text-sm mb-4" style="color:var(--text-muted)">30-minute session to get started</p>
-                        <ul class="text-xs text-left space-y-1" style="color:var(--text-muted)">
-                            <li>• 30-minute session</li>
-                            <li>• Skill assessment</li>
-                            <li>• Learning plan</li>
-                            <li>• No payment required</li>
-                        </ul>
-                    </div>
-                    <div class="glass-card p-6 text-center relative" style="border-color: var(--violet)">
-                        <div class="btn-primary inline-block px-3 py-1 rounded-full text-xs mb-2">Most Popular</div>
-                        <h4 class="font-bold text-xl mb-2" style="color:var(--violet)">Standard Lesson</h4>
-                        <div class="text-3xl font-display font-semibold mb-2" style="color:var(--text-primary)">$15 <span class="text-base font-normal" style="color:var(--text-muted)">/hr</span></div>
-                        <p class="text-sm mb-4" style="color:var(--text-muted)">Direct booking rate. Price can be discussed for custom needs.</p>
-                        <ul class="text-xs text-left space-y-1" style="color:var(--text-muted)">
-                            <li>• Personalized curriculum</li>
-                            <li>• Hands-on coding practice</li>
-                            <li>• GitHub project tracking</li>
-                            <li>• Progress monitoring</li>
-                        </ul>
-                    </div>
-                    <div class="glass-card p-6 text-center">
-                        <h4 class="font-bold text-xl mb-2" style="color:var(--coral)">Package Deal</h4>
-                        <div class="text-3xl font-display font-semibold mb-2" style="color:var(--text-primary)">$100</div>
-                        <p class="text-sm mb-4" style="color:var(--text-muted)">10 sessions for the price of 9 (1 session free!)</p>
-                        <ul class="text-xs text-left space-y-1" style="color:var(--text-muted)">
-                            <li>• All regular features</li>
-                            <li>• Priority scheduling</li>
-                            <li>• Career guidance</li>
-                            <li>• Project portfolio</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="text-center mt-6">
-                    <p class="text-sm mb-2" style="color:var(--text-muted)"><span class="status-dot mr-1"></span> Usually responds in less than an hour</p>
-                    <p class="text-xs" style="color:var(--text-muted)">Popular: 2+ lesson bookings in the last 48 hours</p>
-                </div>
-            </div>
+  <section id="contact" aria-labelledby="contact-h">
+    <div class="card contact">
+      <h2 id="contact-h">Get in touch</h2>
+      <p class="muted">Open to research collaboration, research visits and postdoctoral positions in computer vision and agricultural AI.</p>
+      <div class="links">
+        <a class="btn btn-main" href="mailto:eeumairali@gmail.com">✉ eeumairali@gmail.com</a>
+        <a class="btn" href="/cv.html">📄 Download CV</a>
+        <a class="btn" href="https://www.linkedin.com/in/eeumairali" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/eeumairali" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.researchgate.net/profile/Umair-Ali-35" target="_blank" rel="noopener">ResearchGate</a>
+      </div>
+      <p class="muted" style="margin:18px 0 0;font-size:14px">Gujrat, Punjab, Pakistan</p>
+    </div>
+  </section>
+</main>
 
-            <!-- Student Testimonials -->
-            <div>
-                <h3 class="text-2xl font-semibold text-center mb-8" style="color:var(--text-primary)"><i class="fas fa-comments mr-2" style="color:var(--violet)"></i>What Students Say (From Reviews)</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                    <div class="glass-card p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="avatar-mark w-10 h-10 rounded-full flex items-center justify-center font-bold mr-3">C</div>
-                            <div>
-                                <h4 class="font-semibold" style="color:var(--text-primary)">Chris</h4>
-                                <p class="text-xs" style="color:var(--text-muted)">June 2025</p>
-                            </div>
-                        </div>
-                        <p class="text-sm italic" style="color:var(--text-body)">"Umair is an excellent tutor and I highly recommend him. He is extremely knowledgeable, patient and great at explaining concepts in ways that are easily understandable."</p>
-                        <div class="mt-2" style="color:var(--coral)">★★★★★</div>
-                    </div>
-                    <div class="glass-card p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="avatar-mark w-10 h-10 rounded-full flex items-center justify-center font-bold mr-3">N</div>
-                            <div>
-                                <h4 class="font-semibold" style="color:var(--text-primary)">Nathan</h4>
-                                <p class="text-xs" style="color:var(--text-muted)">June 2025</p>
-                            </div>
-                        </div>
-                        <p class="text-sm italic" style="color:var(--text-body)">"So far i had 5 lessons with Umair, it has been a really good experience, he is very practical and he adjusts his method and teaching according to the students needs and goals."</p>
-                        <div class="mt-2" style="color:var(--coral)">★★★★★</div>
-                    </div>
-                    <div class="glass-card p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="avatar-mark w-10 h-10 rounded-full flex items-center justify-center font-bold mr-3">N</div>
-                            <div>
-                                <h4 class="font-semibold" style="color:var(--text-primary)">Nataliia</h4>
-                                <p class="text-xs" style="color:var(--text-muted)">May 2025</p>
-                            </div>
-                        </div>
-                        <p class="text-sm italic" style="color:var(--text-body)">"We are very satisfied with our son's computer science lessons with Umair. The lessons are always interesting and informative, follow a clear plan, and Umair covers many aspects."</p>
-                        <div class="mt-2" style="color:var(--coral)">★★★★★</div>
-                    </div>
-                    <div class="glass-card p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="avatar-mark w-10 h-10 rounded-full flex items-center justify-center font-bold mr-3">L</div>
-                            <div>
-                                <h4 class="font-semibold" style="color:var(--text-primary)">Linda</h4>
-                                <p class="text-xs" style="color:var(--text-muted)">May 2025</p>
-                            </div>
-                        </div>
-                        <p class="text-sm italic" style="color:var(--text-body)">"Umair has helped me work through the logic of OO in python and stopping to explain concepts in detail as needed. I appreciate how he shares debugging strategies."</p>
-                        <div class="mt-2" style="color:var(--coral)">★★★★★</div>
-                    </div>
-                    <div class="glass-card p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="avatar-mark w-10 h-10 rounded-full flex items-center justify-center font-bold mr-3">S</div>
-                            <div>
-                                <h4 class="font-semibold" style="color:var(--text-primary)">Shefrin</h4>
-                                <p class="text-xs" style="color:var(--text-muted)">May 2025</p>
-                            </div>
-                        </div>
-                        <p class="text-sm italic" style="color:var(--text-body)">"I highly recommend Umair as a tutor. He is incredibly patient and approachable, always creating a comfortable learning environment where questions are encouraged."</p>
-                        <div class="mt-2" style="color:var(--coral)">★★★★★</div>
-                    </div>
-                    <div class="glass-card p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="avatar-mark w-10 h-10 rounded-full flex items-center justify-center font-bold mr-3">A</div>
-                            <div>
-                                <h4 class="font-semibold" style="color:var(--text-primary)">Anonymous</h4>
-                                <p class="text-xs" style="color:var(--text-muted)">Recent Review</p>
-                            </div>
-                        </div>
-                        <p class="text-sm italic" style="color:var(--text-body)">"High recommended teacher. He is patient and well prepared for class. I am looking forward to the next class."</p>
-                        <div class="mt-2" style="color:var(--coral)">★★★★★</div>
-                    </div>
-                </div>
-                <div class="text-center mt-8">
-                    <p class="text-sm" style="color:var(--text-body)">Average Rating: <strong style="color:var(--text-primary)">5.0/5</strong> based on 43+ reviews</p>
-                    <p class="text-xs" style="color:var(--text-muted)">Reviews collected from students on various freelancing platforms</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<footer>© Umair Ali · <a href="/cv.html">CV</a> · Looking for Python lessons? <a href="https://umaircodelab.com" target="_blank" rel="noopener">umaircodelab.com</a></footer>
 
-    <section id="projects" class="py-20 fade-in relative">
-        <div class="container mx-auto px-6">
-            <p class="eyebrow text-center mb-3">Selected work</p>
-            <h2 class="section-title">Projects &amp; GitHub Repositories</h2>
-            <p class="max-w-2xl mx-auto mb-5 text-center text-lg" style="color:var(--text-muted)">Software, research, teaching experiments, and creative builds from my public GitHub profile.</p>
-            <p id="repo-status" class="text-center text-xs mb-10" style="color:var(--eyebrow)"><i class="fas fa-circle-notch fa-spin mr-2"></i>Loading live repository data...</p>
-            <div id="repo-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                <a href="https://github.com/eeumairali/student-portal" target="_blank" rel="noopener noreferrer" class="glass-card repo-card p-6 text-left block">
-                    <div class="flex items-start justify-between gap-3"><i class="fas fa-graduation-cap text-2xl" style="color:var(--violet)"></i><span class="chip text-xs">Python · Django</span></div>
-                    <h3 class="text-xl font-semibold mt-5 mb-2" style="color:var(--text-primary)">Student Portal</h3>
-                    <p class="text-sm" style="color:var(--text-muted)">A private learning portal for tutorials, student progress, lessons, quizzes, and tutor workflows.</p>
-                    <span class="inline-flex items-center mt-5 text-sm font-semibold" style="color:var(--violet)">View repository <i class="fas fa-arrow-up-right-from-square ml-2 text-xs"></i></span>
-                </a>
-                <a href="https://github.com/eeumairali/django_chatbot" target="_blank" rel="noopener noreferrer" class="glass-card repo-card p-6 text-left block">
-                    <div class="flex items-start justify-between gap-3"><i class="fas fa-comments text-2xl" style="color:var(--mint)"></i><span class="chip text-xs">Python · Django</span></div>
-                    <h3 class="text-xl font-semibold mt-5 mb-2" style="color:var(--text-primary)">Django Chatbot</h3>
-                    <p class="text-sm" style="color:var(--text-muted)">A web-based chatbot project exploring conversational interfaces and Django application structure.</p>
-                    <span class="inline-flex items-center mt-5 text-sm font-semibold" style="color:var(--violet)">View repository <i class="fas fa-arrow-up-right-from-square ml-2 text-xs"></i></span>
-                </a>
-                <a href="https://github.com/eeumairali/computervision" target="_blank" rel="noopener noreferrer" class="glass-card repo-card p-6 text-left block">
-                    <div class="flex items-start justify-between gap-3"><i class="fas fa-eye text-2xl" style="color:var(--coral)"></i><span class="chip text-xs">Computer Vision</span></div>
-                    <h3 class="text-xl font-semibold mt-5 mb-2" style="color:var(--text-primary)">Computer Vision</h3>
-                    <p class="text-sm" style="color:var(--text-muted)">Experiments and practical work around image understanding, machine learning, and visual AI.</p>
-                    <span class="inline-flex items-center mt-5 text-sm font-semibold" style="color:var(--violet)">View repository <i class="fas fa-arrow-up-right-from-square ml-2 text-xs"></i></span>
-                </a>
-                <a href="https://github.com/eeumairali/AnimatedMaths" target="_blank" rel="noopener noreferrer" class="glass-card repo-card p-6 text-left block">
-                    <div class="flex items-start justify-between gap-3"><i class="fas fa-square-root-variable text-2xl" style="color:var(--violet)"></i><span class="chip text-xs">Jupyter Notebook</span></div>
-                    <h3 class="text-xl font-semibold mt-5 mb-2" style="color:var(--text-primary)">Animated Maths</h3>
-                    <p class="text-sm" style="color:var(--text-muted)">Visual and animated notebook-based work designed to make mathematical ideas easier to explore.</p>
-                    <span class="inline-flex items-center mt-5 text-sm font-semibold" style="color:var(--violet)">View repository <i class="fas fa-arrow-up-right-from-square ml-2 text-xs"></i></span>
-                </a>
-                <a href="https://github.com/eeumairali/Scratch-To-Tower-Defence" target="_blank" rel="noopener noreferrer" class="glass-card repo-card p-6 text-left block">
-                    <div class="flex items-start justify-between gap-3"><i class="fas fa-gamepad text-2xl" style="color:var(--mint)"></i><span class="chip text-xs">C# · Game project</span></div>
-                    <h3 class="text-xl font-semibold mt-5 mb-2" style="color:var(--text-primary)">Scratch to Tower Defence</h3>
-                    <p class="text-sm" style="color:var(--text-muted)">A creative game-development project showing experimentation beyond Python and data science.</p>
-                    <span class="inline-flex items-center mt-5 text-sm font-semibold" style="color:var(--violet)">View repository <i class="fas fa-arrow-up-right-from-square ml-2 text-xs"></i></span>
-                </a>
-                <a href="https://github.com/eeumairali/eeumairali.github.io" target="_blank" rel="noopener noreferrer" class="glass-card repo-card p-6 text-left block">
-                    <div class="flex items-start justify-between gap-3"><i class="fas fa-globe text-2xl" style="color:var(--coral)"></i><span class="chip text-xs">HTML · CSS · JS</span></div>
-                    <h3 class="text-xl font-semibold mt-5 mb-2" style="color:var(--text-primary)">Personal Website</h3>
-                    <p class="text-sm" style="color:var(--text-muted)">This GitHub Pages portfolio, built to present my teaching, research, experience, and public work.</p>
-                    <span class="inline-flex items-center mt-5 text-sm font-semibold" style="color:var(--violet)">View repository <i class="fas fa-arrow-up-right-from-square ml-2 text-xs"></i></span>
-                </a>
-            </div>
-            <div class="text-center mt-10"><a href="https://github.com/eeumairali" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center px-6 py-3 font-semibold">See all repositories <i class="fab fa-github ml-2"></i></a></div>
-        </div>
-    </section>
+<script>
+// light / dark, remembered on this device
+(function () {
+  const root = document.documentElement, key = "theme";
+  try { const t = localStorage.getItem(key); if (t) root.dataset.theme = t; } catch (e) {}
+  document.getElementById("theme").addEventListener("click", () => {
+    const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = dark ? "light" : "dark";
+    try { localStorage.setItem(key, root.dataset.theme); } catch (e) {}
+  });
+})();
 
-    <section id="experience" class="py-20 fade-in relative">
-        <div class="container mx-auto px-6">
-            <p class="eyebrow text-center mb-3">Career</p>
-            <h2 class="section-title">Experience</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+// copy a citation
+document.querySelectorAll("[data-cite]").forEach((b) => b.addEventListener("click", async () => {
+  try { await navigator.clipboard.writeText(b.dataset.cite); b.textContent = "Copied ✓"; }
+  catch (e) { prompt("Copy this citation:", b.dataset.cite); }
+  setTimeout(() => (b.textContent = "Copy citation"), 1800);
+}));
 
-                <div class="glass-card p-6">
-                    <h3 class="text-xl font-semibold mb-2" style="color:var(--violet)">Data Science &amp; ML Engineer (Freelance)</h3>
-                    <p class="font-semibold mb-1" style="color:var(--text-primary)">Freelancing Platforms</p>
-                    <p class="text-sm mb-3" style="color:var(--text-muted)">Feb 2022 - Present · 3 yrs 6 mos</p>
-                    <ul class="list-disc list-inside space-y-1 text-sm" style="color:var(--text-body)">
-                        <li>Developed and implemented Machine Learning models using TensorFlow.</li>
-                        <li>Performed comprehensive data analysis and visualization for client insights.</li>
-                        <li>Built computer vision applications and deep learning solutions.</li>
-                        <li>Created automation solutions and optimized business processes.</li>
-                        <li>Maintained high client satisfaction across diverse project portfolio.</li>
-                    </ul>
-                </div>
+// the research pipeline, illustrated: cows seen from above, detected, tracked and labelled
+(function () {
+  const cv = document.getElementById("herd"), ctx = cv.getContext("2d"), W = cv.width, H = cv.height;
+  const show = { detect: true, track: true, behave: true };
+  const COLORS = ["#f97316", "#38bdf8", "#facc15", "#f472b6", "#a3e635"];
+  const rnd = (a, b) => a + Math.random() * (b - a);
+  const cows = COLORS.map((c, i) => ({ id: i + 1, c, x: rnd(80, W - 80), y: rnd(90, H - 70), a: rnd(0, 6.28), v: 0, mode: "standing", t: rnd(1, 4), trail: [],
+    spots: [[rnd(-8, 8), rnd(-6, 6)], [rnd(-10, 6), rnd(-6, 6)]] }));
+  const SPEED = { walking: 26, grazing: 5, lying: 0, standing: 0 };
+  const LABEL = { walking: "walking", grazing: "feeding", lying: "lying", standing: "standing" };
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let last = performance.now();
 
-                <div class="glass-card p-6">
-                    <h3 class="text-xl font-semibold mb-2" style="color:var(--mint)">Python Tutor</h3>
-                    <p class="font-semibold mb-1" style="color:var(--text-primary)">Freelancing Platforms</p>
-                    <p class="text-sm mb-3" style="color:var(--text-muted)">Jan 2022 - Present · 3 yrs 7 mos</p>
-                    <ul class="list-disc list-inside space-y-1 text-sm" style="color:var(--text-body)">
-                        <li>Provide expert Python tutoring from basic to advanced levels.</li>
-                        <li>Specialized in TensorFlow, Deep Learning, and Data Science.</li>
-                        <li>Developed customized learning paths for diverse skill levels.</li>
-                        <li>Conducted 5,000+ practical, project-based one-on-one sessions.</li>
-                        <li>Contact: <a href="mailto:eeumairali@gmail.com" class="hover:underline" style="color:var(--violet)">eeumairali@gmail.com</a></li>
-                    </ul>
-                </div>
-
-                <div class="glass-card p-6">
-                     <h3 class="text-xl font-semibold mb-2" style="color:var(--coral)">Freelance Developer</h3>
-                     <p class="font-semibold mb-1" style="color:var(--text-primary)">Freelancing Platforms</p>
-                     <p class="text-sm mb-3" style="color:var(--text-muted)">Feb 2020 - Present · 5 yrs 6 mos</p>
-                     <ul class="list-disc list-inside space-y-1 text-sm" style="color:var(--text-body)">
-                         <li>Specialized in Python and MATLAB programming solutions.</li>
-                         <li>Provided TensorFlow and R programming services.</li>
-                         <li>Converted MATLAB code to optimized Python implementations.</li>
-                         <li>Developed automation scripts and data processing pipelines.</li>
-                         <li>Username: py_iot (deactivated but experience retained)</li>
-                     </ul>
-                 </div>
-
-                <div class="glass-card p-6">
-                    <h3 class="text-xl font-semibold mb-2" style="color:var(--violet)">Associate Engineer</h3>
-                    <p class="font-semibold mb-1" style="color:var(--text-primary)">Mezino Technologies · Contract</p>
-                    <p class="text-sm mb-3" style="color:var(--text-muted)">Aug 2021 - Mar 2022 · 8 months</p>
-                    <ul class="list-disc list-inside space-y-1 text-sm" style="color:var(--text-body)">
-                        <li>Worked on front-end development projects using modern frameworks.</li>
-                        <li>Implemented version control systems using Git for team collaboration.</li>
-                        <li>Contributed to embedded systems and IoT project development.</li>
-                        <li>Collaborated with cross-functional teams in Lahore, Pakistan.</li>
-                    </ul>
-                </div>
-
-                <div class="glass-card p-6">
-                    <h3 class="text-xl font-semibold mb-2" style="color:var(--mint)">Internship</h3>
-                    <p class="font-semibold mb-1" style="color:var(--text-primary)">SERVIS INDUSTRY GUJRAT</p>
-                    <p class="text-sm mb-3" style="color:var(--text-muted)">2018</p>
-                    <ul class="list-disc list-inside space-y-1 text-sm" style="color:var(--text-body)">
-                        <li>Gained experience in PLC programming and embedded systems.</li>
-                        <li>Worked on industrial automation systems maintenance.</li>
-                        <li>Learned about power system distribution in manufacturing.</li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="education" class="container mx-auto px-6 py-20 fade-in relative">
-        <p class="eyebrow text-center mb-3">Academics</p>
-        <h2 class="section-title">Education</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            <div class="glass-card p-6">
-                <h3 class="text-xl font-semibold mb-2" style="color:var(--violet)">PhD in Electrical Engineering</h3>
-                 <p class="font-semibold mb-1" style="color:var(--text-primary)">University of Gujrat</p>
-                 <p class="text-sm mb-3" style="color:var(--text-muted)">Aug 2024 - Aug 2027 (Expected)</p>
-                 <p class="text-sm font-medium mb-2" style="color:var(--text-body)">Research Focus:</p>
-                 <p class="text-sm mb-3" style="color:var(--text-muted)">Livestock behavior recognition using Computer Vision and AI.</p>
-                 <p class="text-sm font-medium mb-2" style="color:var(--text-body)">Core Areas:</p>
-                 <ul class="list-disc list-inside space-y-1 text-sm" style="color:var(--text-muted)">
-                     <li>Advanced Machine Learning Algorithms</li>
-                     <li>Computer Vision Techniques</li>
-                     <li>Deep Learning Architectures</li>
-                     <li>Real-time Monitoring Systems</li>
-                     <li>Python Programming Applications</li>
-                 </ul>
-            </div>
-
-            <div class="glass-card p-6">
-                <h3 class="text-xl font-semibold mb-2" style="color:var(--mint)">MS Electrical Engineering</h3>
-                <p class="font-semibold mb-1" style="color:var(--text-primary)">University of Gujrat</p>
-                <p class="text-sm mb-3" style="color:var(--text-muted)">2018 - 2020 | CGPA: 3.43</p>
-                <p class="text-sm font-medium mb-2" style="color:var(--text-body)">Thesis:</p>
-                <p class="text-sm mb-3" style="color:var(--text-muted)">"Multisensory Fusion For Underwater Robot Localization And Exploration"</p>
-                <p class="text-sm font-medium mb-2" style="color:var(--text-body)">Key Subjects:</p>
-                 <ul class="list-disc list-inside space-y-1 text-sm" style="color:var(--text-muted)">
-                    <li>Machine Learning &amp; Neural Networks</li>
-                    <li>Digital Control Systems</li>
-                    <li>Advanced Power Electronics</li>
-                    <li>Sensor Fusion Techniques</li>
-                 </ul>
-            </div>
-
-            <div class="glass-card p-6">
-                <h3 class="text-xl font-semibold mb-2" style="color:var(--coral)">BS Electrical Engineering</h3>
-                <p class="font-semibold mb-1" style="color:var(--text-primary)">University of Management and Technology</p>
-                <p class="text-sm mb-3" style="color:var(--text-muted)">2014 - 2018 | CGPA: 2.81</p>
-                <p class="text-sm font-medium mb-2" style="color:var(--text-body)">Final Project:</p>
-                <p class="text-sm mb-3" style="color:var(--text-muted)">Automated Petrol Pump System</p>
-                 <p class="text-sm font-medium mb-2" style="color:var(--text-body)">Key Subjects:</p>
-                 <ul class="list-disc list-inside space-y-1 text-sm" style="color:var(--text-muted)">
-                    <li>Digital Logic Design</li>
-                    <li>Computer Org. &amp; Architecture</li>
-                    <li>Computer Networks</li>
-                    <li>Control Systems</li>
-                 </ul>
-            </div>
-
-            <div class="glass-card p-6 md:col-span-1 lg:col-span-3">
-                 <h3 class="text-xl font-semibold mb-2" style="color:var(--violet)">FSc Pre-Engineering</h3>
-                 <p class="font-semibold mb-1" style="color:var(--text-primary)">GOVT. ZAMINDAR POSTGRADUATE COLLEGE</p>
-                 <p class="text-sm mb-3" style="color:var(--text-muted)">2011 - 2013 (Improved 2014)</p>
-                 <p class="text-sm font-medium mb-2" style="color:var(--text-body)">Major Subjects:</p>
-                 <p class="text-sm" style="color:var(--text-muted)">Physics, Mathematics, Chemistry</p>
-            </div>
-
-        </div>
-    </section>
-
-     <section id="publications" class="py-20 fade-in relative">
-         <div class="container mx-auto px-6">
-             <p class="eyebrow text-center mb-3">Research</p>
-             <h2 class="section-title">Publications</h2>
-             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-
-                 <div class="glass-card p-6">
-                     <h3 class="text-lg font-semibold mb-2" style="color:var(--text-primary)">Cow Face Detection for Precision Livestock Management using YOLOv8</h3>
-                     <p class="text-sm font-semibold mb-1" style="color:var(--mint)">International Journal of Innovations in Science and Technology</p>
-                     <p class="text-xs mb-3" style="color:var(--text-muted)">Mar 2025 (Expected Publication)</p>
-                      <p class="text-sm mb-3" style="color:var(--text-body)">Fine-tuned YOLOv8 with COCO-pretrained weights and mixed datasets for accurate cow face detection.</p>
-                     <a href="https://www.researchgate.net/publication/390810418_Cow_Face_Detection_for_Precision_Livestock_Management_using_YOLOv8" target="_blank" rel="noopener noreferrer" class="text-sm hover:underline inline-flex items-center" style="color:var(--violet)">
-                         View on ResearchGate <i class="fas fa-external-link-alt ml-1 text-xs"></i>
-                     </a>
-                 </div>
-
-                 <div class="glass-card p-6">
-                      <h3 class="text-lg font-semibold mb-2" style="color:var(--text-primary)">Multi-Sensor Fusion for Underwater Robot Self-Localization Using PC/BC-DIM Neural Network</h3>
-                      <p class="text-sm font-semibold mb-1" style="color:var(--mint)">Sensor Review Journal (Emerald Publishing)</p>
-                      <p class="text-xs mb-3" style="color:var(--text-muted)">Oct 2021</p>
-                      <p class="text-sm mb-3" style="color:var(--text-body)">Proposed a novel PC/BC-DIM neural network-based multi-sensor fusion approach for optimal noisy sensory information processing.</p>
-                      <a href="https://doi.org/10.1108/SR-03-2021-0104" target="_blank" rel="noopener noreferrer" class="text-sm hover:underline inline-flex items-center" style="color:var(--violet)">
-                          View Publication (DOI) <i class="fas fa-external-link-alt ml-1 text-xs"></i>
-                      </a>
-                  </div>
-
-             </div>
-         </div>
-     </section>
-
-     <section id="skills" class="container mx-auto px-6 py-20 fade-in relative">
-         <p class="eyebrow text-center mb-3">Toolbox</p>
-         <h2 class="section-title">Technical Skills</h2>
-         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-             <div class="glass-card p-6">
-                 <h3 class="text-lg font-semibold mb-4 text-center" style="color:var(--violet)"><i class="fas fa-code mr-2"></i>Programming Languages</h3>
-                 <ul class="space-y-2 text-sm" style="color:var(--text-body)">
-                     <li><strong style="color:var(--text-primary)">Python (Advanced):</strong> Data analysis, ML/AI, Web Dev, Automation</li>
-                     <li><strong style="color:var(--text-primary)">MATLAB (Advanced):</strong> Scientific Computing, Simulations</li>
-                     <li><strong style="color:var(--text-primary)">C (Intermediate):</strong> Embedded Systems, Algorithms</li>
-                     <li><strong style="color:var(--text-primary)">JavaScript (Basic):</strong> Frontend Interactions</li>
-                 </ul>
-             </div>
-
-             <div class="glass-card p-6">
-                 <h3 class="text-lg font-semibold mb-4 text-center" style="color:var(--mint)"><i class="fas fa-gears mr-2"></i>Frameworks &amp; Libraries</h3>
-                 <ul class="space-y-2 text-sm" style="color:var(--text-body)">
-                     <li><strong style="color:var(--text-primary)">ML/Data Science:</strong> TensorFlow, Keras, Scikit-learn, NumPy, Pandas</li>
-                     <li><strong style="color:var(--text-primary)">Web Dev:</strong> Django, Flask, PyQt5, Bootstrap, Tailwind CSS</li>
-                     <li><strong style="color:var(--text-primary)">Visualization:</strong> Matplotlib, Seaborn, Plotly</li>
-                     <li><strong style="color:var(--text-primary)">IoT/Embedded:</strong> ROS, Arduino, Raspberry Pi</li>
-                 </ul>
-             </div>
-
-             <div class="glass-card p-6">
-                  <h3 class="text-lg font-semibold mb-4 text-center" style="color:var(--coral)"><i class="fas fa-database mr-2"></i>Database Systems</h3>
-                  <ul class="space-y-2 text-sm" style="color:var(--text-body)">
-                      <li><strong style="color:var(--text-primary)">SQL:</strong> SQLite, PostgreSQL</li>
-                      <li><strong style="color:var(--text-primary)">NoSQL:</strong> MongoDB</li>
-                  </ul>
-             </div>
-
-             <div class="glass-card p-6">
-                 <h3 class="text-lg font-semibold mb-4 text-center" style="color:var(--violet)"><i class="fas fa-toolbox mr-2"></i>Development Tools</h3>
-                 <ul class="space-y-2 text-sm" style="color:var(--text-body)">
-                     <li><strong style="color:var(--text-primary)">Version Control:</strong> Git, GitHub</li>
-                     <li><strong style="color:var(--text-primary)">IDEs:</strong> PyCharm, VS Code, Jupyter Notebook</li>
-                      <li><strong style="color:var(--text-primary)">Electronics:</strong> PCB Modeling, Circuit Simulation</li>
-                 </ul>
-             </div>
-
-         </div>
-     </section>
-
-    <section id="certifications" class="py-20 fade-in relative">
-         <div class="container mx-auto px-6">
-             <p class="eyebrow text-center mb-3">Credentials</p>
-             <h2 class="section-title">Certifications</h2>
-             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                 <div class="glass-card p-5 text-sm">
-                     <h4 class="font-semibold mb-1" style="color:var(--violet)">AI For Everyone</h4>
-                     <p class="mb-1" style="color:var(--text-body)">DeepLearning.AI (2025)</p>
-                     <p style="color:var(--text-muted)">Foundational AI concepts, implementation strategies, ethical considerations. <span class="block text-xs mt-1">ID: 7POCAYWNN1OW</span></p>
-                 </div>
-                 <div class="glass-card p-5 text-sm">
-                     <h4 class="font-semibold mb-1" style="color:var(--mint)">Introduction to Programming with MATLAB</h4>
-                     <p class="mb-1" style="color:var(--text-body)">Vanderbilt University (Coursera, 2024)</p>
-                     <p style="color:var(--text-muted)">Advanced MATLAB programming techniques. <span class="block text-xs mt-1">ID: 5KLG98QEKQ2W</span></p>
-                 </div>
-                  <div class="glass-card p-5 text-sm">
-                      <h4 class="font-semibold mb-1" style="color:var(--coral)">Image Denoising Using AutoEncoders in Keras</h4>
-                      <p class="mb-1" style="color:var(--text-body)">Coursera (2023)</p>
-                      <p style="color:var(--text-muted)">Deep learning for image processing and noise reduction. <span class="block text-xs mt-1">ID: KK9Y567GQUB9</span></p>
-                  </div>
-                 <div class="glass-card p-5 text-sm">
-                     <h4 class="font-semibold mb-1" style="color:var(--violet)">Simple Nearest Neighbors Regression &amp; Classification</h4>
-                     <p class="mb-1" style="color:var(--text-body)">Coursera (2023)</p>
-                     <p style="color:var(--text-muted)">Applied ML algorithms for classification/regression. <span class="block text-xs mt-1">ID: 4AMSRRCFCR9V</span></p>
-                 </div>
-                  <div class="glass-card p-5 text-sm">
-                      <h4 class="font-semibold mb-1" style="color:var(--mint)">IELTS Skills Mastery (Writing/Listening/Speaking)</h4>
-                      <p class="mb-1" style="color:var(--text-body)">Coursera (2023)</p>
-                      <p style="color:var(--text-muted)">Enhanced English communication skills. <span class="block text-xs mt-1">ID: XLR2QJXD2N42, ...</span></p>
-                  </div>
-                 <div class="glass-card p-5 text-sm">
-                     <h4 class="font-semibold mb-1" style="color:var(--coral)">Full Stack Web Development with Flask</h4>
-                     <p class="mb-1" style="color:var(--text-body)">Pirple (2023)</p>
-                     <p style="color:var(--text-muted)">Built web apps (Flask, SQLite, Tailwind, WSGI/Nginx). <span class="block text-xs mt-1">ID: xfinab0jsm</span></p>
-                 </div>
-                 <div class="glass-card p-5 text-sm">
-                     <h4 class="font-semibold mb-1" style="color:var(--violet)">Python for Machine Learning &amp; Data Science Masterclass</h4>
-                     <p class="mb-1" style="color:var(--text-body)">Udemy (2022)</p>
-                     <p style="color:var(--text-muted)">Comprehensive training in data analysis, viz, and ML. <span class="block text-xs mt-1">ID: UC-87f31a1c...</span></p>
-                 </div>
-                  <div class="glass-card p-5 text-sm">
-                      <h4 class="font-semibold mb-1" style="color:var(--mint)">Associate Artificial Intelligence &amp; IoT</h4>
-                      <p class="mb-1" style="color:var(--text-body)">DigiPAKISTAN (2022)</p>
-                      <p style="color:var(--text-muted)">Specialized training in AI applications and IoT tech. <span class="block text-xs mt-1">ID: 719e49ed82, ...</span></p>
-                  </div>
-                  <div class="glass-card p-5 text-sm">
-                      <h4 class="font-semibold mb-1" style="color:var(--coral)">Python and Django Full Stack Web Developer Bootcamp</h4>
-                      <p class="mb-1" style="color:var(--text-body)">Udemy (2021)</p>
-                      <p style="color:var(--text-muted)">Full-stack web app development using Django. <span class="block text-xs mt-1">ID: UC-01d51d2a...</span></p>
-                  </div>
-                  <div class="glass-card p-5 text-sm">
-                      <h4 class="font-semibold mb-1" style="color:var(--violet)">Python GUI Programming Using PyQt5</h4>
-                      <p class="mb-1" style="color:var(--text-body)">Udemy (2021)</p>
-                      <p style="color:var(--text-muted)">Desktop application creation with Python/PyQt5. <span class="block text-xs mt-1">ID: UC-503eb4f0...</span></p>
-                  </div>
-             </div>
-         </div>
-    </section>
-
-    <section id="interests" class="container mx-auto px-6 py-20 fade-in relative">
-         <p class="eyebrow text-center mb-3">Beyond Work</p>
-         <h2 class="section-title">Interests &amp; Activities</h2>
-         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-             <div class="glass-card p-6 text-center">
-                 <i class="fas fa-magnifying-glass-chart text-2xl mb-3" style="color:var(--violet)"></i>
-                 <h4 class="font-semibold mb-2" style="color:var(--text-primary)">Technology Exploration</h4>
-                 <p class="text-sm" style="color:var(--text-muted)">Actively analyzing and implementing emerging technologies, especially in AI and machine learning.</p>
-             </div>
-             <div class="glass-card p-6 text-center">
-                 <i class="fas fa-book-reader text-2xl mb-3" style="color:var(--mint)"></i>
-                 <h4 class="font-semibold mb-2" style="color:var(--text-primary)">Continuous Learning</h4>
-                 <p class="text-sm" style="color:var(--text-muted)">Regularly pursuing new skills via online courses and technical literature to stay current.</p>
-             </div>
-              <div class="glass-card p-6 text-center">
-                 <i class="fas fa-pen-nib text-2xl mb-3" style="color:var(--coral)"></i>
-                 <h4 class="font-semibold mb-2" style="color:var(--text-primary)">Technical Writing</h4>
-                 <p class="text-sm" style="color:var(--text-muted)">Enjoy documenting research findings and technical projects through articles and tutorials.</p>
-             </div>
-         </div>
-          <div class="mt-14">
-              <h3 class="text-xl font-semibold text-center mb-6" style="color:var(--text-primary)">Research Interests</h3>
-              <div class="flex flex-wrap justify-center gap-3">
-                  <span class="chip">Computer Vision</span>
-                  <span class="chip">Deep Learning</span>
-                   <span class="chip">AI Ethics</span>
-                  <span class="chip">Robotics</span>
-                  <span class="chip">IoT</span>
-                  <span class="chip">ML Systems</span>
-              </div>
-         </div>
-          <div class="mt-10 text-center">
-              <h4 class="text-lg font-semibold mb-2" style="color:var(--text-primary)">Languages</h4>
-              <p style="color:var(--text-muted)">English (Professional Proficiency) | Urdu (Native)</p>
-         </div>
-     </section>
-
-    <section id="contact" class="py-20 fade-in relative">
-        <div class="container mx-auto px-6 text-center">
-            <p class="eyebrow mb-3">Get in touch</p>
-            <h2 class="font-display text-4xl font-semibold mb-6" style="color:var(--text-primary)">Let's Connect &amp; <span class="text-gradient">Collaborate</span></h2>
-            <p class="max-w-2xl mx-auto mb-12 text-lg" style="color:var(--text-muted)">Whether you're looking to learn Python, need expertise for an ML/AI project, or want to discuss potential collaborations, feel free to reach out!</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
-                <div class="glass-card p-6 text-left">
-                    <i class="fab fa-python text-3xl mb-3" style="color:var(--mint)"></i>
-                    <h3 class="text-xl font-semibold mb-2" style="color:var(--text-primary)">Book a Lesson</h3>
-                    <p class="text-sm mb-4" style="color:var(--text-muted)">Start with a <strong style="color:var(--text-body)">free 30-minute trial lesson</strong> or book standard lessons for $15/hour. Buy a package: 10 sessions for $100 (1 free). 5★ rating with 5,000+ lessons taught and 200+ projects completed.</p>
-                    <a href="mailto:eeumairali@gmail.com?subject=Python%20Tutoring%20Booking" class="font-semibold hover:underline" style="color:var(--violet)">Book via Email <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
-                </div>
-                <div class="glass-card p-6 text-left">
-                    <i class="fas fa-diagram-project text-3xl mb-3" style="color:var(--violet)"></i>
-                    <h3 class="text-xl font-semibold mb-2" style="color:var(--text-primary)">Project Collaboration</h3>
-                    <p class="text-sm mb-4" style="color:var(--text-muted)">Need help with AI, Computer Vision, or Data Science projects? Let's collaborate on your next innovation.</p>
-                    <a href="mailto:eeumairali@gmail.com?subject=Project%20Collaboration%20Inquiry" class="font-semibold hover:underline" style="color:var(--violet)">Propose a Project <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
-                </div>
-                <div class="glass-card p-6 text-left">
-                    <i class="fas fa-comments text-3xl mb-3" style="color:var(--coral)"></i>
-                    <h3 class="text-xl font-semibold mb-2" style="color:var(--text-primary)">General Inquiry</h3>
-                    <p class="text-sm mb-4" style="color:var(--text-muted)">Have questions about my research, teaching approach, or want to connect? Send me a message!</p>
-                    <a href="mailto:eeumairali@gmail.com" class="font-semibold hover:underline" style="color:var(--violet)">Send an Email <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
-                </div>
-            </div>
-
-            <div class="mt-12 space-y-3 max-w-md mx-auto text-left" style="color:var(--text-body)">
-                 <p><i class="fas fa-location-dot mr-3" style="color:var(--mint)"></i>Gujrat District, Punjab, Pakistan</p>
-                 <p><i class="fas fa-envelope mr-3" style="color:var(--mint)"></i><a href="mailto:eeumairali@gmail.com" class="hover:underline">eeumairali@gmail.com</a></p>
-                 <p><i class="fab fa-whatsapp mr-3" style="color:var(--mint)"></i>WhatsApp: <a href="https://wa.me/923223405479" target="_blank" rel="noopener noreferrer" class="hover:underline">+92 322 3405479</a></p>
-                 <p><i class="fab fa-linkedin mr-3" style="color:var(--mint)"></i>LinkedIn: <a href="https://linkedin.com/in/eeumairali" target="_blank" rel="noopener noreferrer" class="hover:underline">linkedin.com/in/eeumairali</a></p>
-                 <p><i class="fas fa-globe mr-3" style="color:var(--mint)"></i>Personal Website: <a href="https://eeumairali.github.io/" target="_blank" rel="noopener noreferrer" class="hover:underline">eeumairali.github.io</a></p>
-                 <p><i class="fas fa-graduation-cap mr-3" style="color:var(--mint)"></i>Study Desk: <a href="https://umaircodelab.com" target="_blank" rel="noopener noreferrer" class="hover:underline">umaircodelab.com</a></p>
-            </div>
-
-            <div class="mt-10 space-x-6">
-                <a href="https://github.com/eeumairali" target="_blank" rel="noopener noreferrer" class="nav-link text-2xl"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/eeumairali" target="_blank" rel="noopener noreferrer" class="nav-link text-2xl"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.researchgate.net/profile/Umair-Ali-35" target="_blank" rel="noopener noreferrer" class="nav-link text-2xl"><i class="fab fa-researchgate"></i></a>
-                <a href="https://wa.me/923223405479" target="_blank" rel="noopener noreferrer" class="nav-link text-2xl" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                 <a href="mailto:eeumairali@gmail.com" class="nav-link text-2xl"><i class="fas fa-envelope"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Visible FAQ Section — required for FAQPage rich results and AI passage extraction -->
-    <section id="faq" class="py-20 fade-in relative">
-        <div class="container mx-auto px-6 max-w-3xl">
-            <p class="eyebrow text-center mb-3">FAQ</p>
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <div class="space-y-4">
-                <details class="glass-card p-6">
-                    <summary class="font-semibold text-lg cursor-pointer" style="color:var(--text-primary)">What Python topics does Umair Ali teach?</summary>
-                    <p class="mt-3 text-sm" style="color:var(--text-body)">Umair Ali teaches Python from beginner to advanced levels, including core syntax, object-oriented programming, data science with NumPy and Pandas, machine learning with Scikit-learn and TensorFlow, deep learning with PyTorch, web development with Django and Flask, computer vision, and automation scripting.</p>
-                </details>
-                <details class="glass-card p-6">
-                    <summary class="font-semibold text-lg cursor-pointer" style="color:var(--text-primary)">How much do online Python tutoring sessions cost?</summary>
-                    <p class="mt-3 text-sm" style="color:var(--text-body)">Umair offers a free 30-minute trial lesson with no payment required. Standard one-on-one sessions are $15 per hour. A package of 10 sessions costs $100 (one session free). All sessions are online via video call, available to students worldwide.</p>
-                </details>
-                <details class="glass-card p-6">
-                    <summary class="font-semibold text-lg cursor-pointer" style="color:var(--text-primary)">Does Umair Ali offer online tutoring to students worldwide?</summary>
-                    <p class="mt-3 text-sm" style="color:var(--text-body)">Yes. Umair Ali provides online Python tutoring worldwide via video call. He is flexible with time zones and has taught students from over 20 countries. Sessions can be conducted in English, Urdu, or Punjabi.</p>
-                </details>
-                <details class="glass-card p-6">
-                    <summary class="font-semibold text-lg cursor-pointer" style="color:var(--text-primary)">What qualifications does Umair Ali have as a Python tutor?</summary>
-                    <p class="mt-3 text-sm" style="color:var(--text-body)">Umair Ali holds an MS in Electrical Engineering and is currently pursuing a PhD at the University of Gujrat, with research focused on computer vision and machine learning. He has 7+ years of Python experience, has taught 5,000+ lessons and completed 200+ projects with a 5.0-star rating from 43 reviews, and has published peer-reviewed research in Emerald's Sensor Review journal.</p>
-                </details>
-                <details class="glass-card p-6">
-                    <summary class="font-semibold text-lg cursor-pointer" style="color:var(--text-primary)">How can I book a Python tutoring session?</summary>
-                    <p class="mt-3 text-sm" style="color:var(--text-body)">Email <a href="mailto:eeumairali@gmail.com?subject=Python%20Tutoring%20Booking" class="hover:underline" style="color:var(--violet)">eeumairali@gmail.com</a> with the subject "Python Tutoring Booking." The free 30-minute trial requires no payment. Umair typically responds within one hour.</p>
-                </details>
-                <details class="glass-card p-6">
-                    <summary class="font-semibold text-lg cursor-pointer" style="color:var(--text-primary)">Does Umair Ali teach Python to kids?</summary>
-                    <p class="mt-3 text-sm" style="color:var(--text-body)">Yes. Umair Ali works as a Python teacher for kids as well as complete beginners, working professionals, and career switchers, offering one-to-one online lessons paced to each student's age and skill level. Lessons for kids use simple, hands-on examples and screen-sharing so they can code alongside their teacher in real time.</p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <footer class="text-center py-8 relative" style="border-top: 1px solid var(--card-border)">
-         <div class="container mx-auto px-6">
-             <p class="text-sm" style="color:var(--text-muted)">&copy; 2026 Umair Ali. All rights reserved.</p>
-             <p class="text-xs mt-2" style="color:var(--text-muted)">Study Desk portal: <a href="https://umaircodelab.com" target="_blank" rel="noopener noreferrer" class="hover:underline" style="color:var(--violet)">umaircodelab.com</a></p>
-         </div>
-    </footer>
-
-    <script>
-        // Theme toggle (persisted, defaults to light regardless of system preference)
-        (function() {
-            const root = document.documentElement;
-            const stored = localStorage.getItem('theme');
-            root.setAttribute('data-theme', stored === 'dark' ? 'dark' : 'light');
-            function currentIsDark() {
-                return root.getAttribute('data-theme') === 'dark';
-            }
-            function updateIcons() {
-                const isDark = currentIsDark();
-                document.querySelectorAll('#theme-toggle i, #theme-toggle-desktop i').forEach(icon => {
-                    icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
-                });
-            }
-            function toggleTheme() {
-                const next = currentIsDark() ? 'light' : 'dark';
-                root.setAttribute('data-theme', next);
-                localStorage.setItem('theme', next);
-                updateIcons();
-            }
-            document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
-            document.getElementById('theme-toggle-desktop').addEventListener('click', toggleTheme);
-            updateIcons();
-        })();
-
-        // Fade-in Animation on Scroll
-        const fadeInSections = document.querySelectorAll('.fade-in');
-        const options = {
-            threshold: 0,
-            rootMargin: "0px 0px 300px 0px"
-        };
-
-        const observer = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
-                }
-                entry.target.classList.add('fade-in-visible');
-                observer.unobserve(entry.target);
-            });
-        }, options);
-
-        fadeInSections.forEach(section => {
-            observer.observe(section);
-        });
-
-         // Mobile Menu Toggle
-         const mobileMenuButton = document.getElementById('mobile-menu-button');
-         const mobileMenu = document.getElementById('mobile-menu');
-         const navLinks = mobileMenu.querySelectorAll('a');
-
-         mobileMenuButton.addEventListener('click', () => {
-             mobileMenu.classList.toggle('hidden');
-         });
-
-         navLinks.forEach(link => {
-             link.addEventListener('click', () => {
-                 mobileMenu.classList.add('hidden');
-             });
-         });
-
-         // Keep the portfolio current without making the page depend on the API.
-         const repoGrid = document.getElementById('repo-grid');
-         const repoStatus = document.getElementById('repo-status');
-         const featuredRepos = ['student-portal', 'django_chatbot', 'computervision', 'CowBodyRecognition', 'RagImplementation', 'AnimatedMaths', 'Scratch-To-Tower-Defence', 'eeumairali.github.io'];
-         const repoIcons = { Python: 'fa-python', 'Jupyter Notebook': 'fa-chart-line', HTML: 'fa-globe', JavaScript: 'fa-square-js', 'C#': 'fa-gamepad', MATLAB: 'fa-wave-square' };
-         const repoDescriptions = {
-             'student-portal': 'A learning portal for tutorials, progress tracking, lessons, quizzes, and tutor workflows.',
-             'django_chatbot': 'A Django chatbot experiment exploring conversational interfaces and web application structure.',
-             computervision: 'Computer vision experiments for image understanding, machine learning, and visual AI.',
-             CowBodyRecognition: 'Research code exploring computer vision for livestock behavior and body recognition.',
-             RagImplementation: 'A practical retrieval-augmented generation experiment for grounded AI applications.',
-             AnimatedMaths: 'Animated notebook work that makes mathematical ideas easier to explore visually.',
-             'Scratch-To-Tower-Defence': 'A creative game-development project showing experimentation beyond Python and data science.',
-             'eeumairali.github.io': 'This portfolio website, built to connect teaching, research, and public software work.'
-         };
-         const escapeHtml = value => String(value).replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
-         const renderRepos = repos => {
-             repoGrid.innerHTML = repos.map(repo => {
-                 const language = repo.language || 'Open source';
-                 const icon = repoIcons[language] || 'fa-code-branch';
-                 const description = repoDescriptions[repo.name] || repo.description || 'A public project from my GitHub work across software, research, and learning.';
-                 return `<a href="${escapeHtml(repo.html_url)}" target="_blank" rel="noopener noreferrer" class="glass-card repo-card p-6 text-left block">
-                     <div><div class="flex items-start justify-between gap-3"><i class="fab ${icon === 'fa-python' ? icon : 'fas ' + icon} text-2xl" style="color:var(--coral)"></i><span class="chip text-xs">${escapeHtml(language)}</span></div>
-                     <h3 class="text-xl font-semibold mt-5 mb-2" style="color:var(--text-primary)">${escapeHtml(repo.name)}</h3>
-                     <p class="text-sm" style="color:var(--text-muted)">${escapeHtml(description)}</p></div>
-                     <div class="repo-meta mt-5 flex items-center justify-between"><span><i class="fas fa-star mr-1"></i>${repo.stargazers_count} stars</span><span style="color:var(--violet)">View repository <i class="fas fa-arrow-up-right-from-square ml-1 text-xs"></i></span></div>
-                 </a>`;
-             }).join('');
-         };
-         fetch('https://api.github.com/users/eeumairali/repos?per_page=100&sort=updated')
-             .then(response => response.ok ? response.json() : Promise.reject(new Error('GitHub API unavailable')))
-             .then(repos => {
-                 const originals = repos.filter(repo => !repo.fork);
-                 const selected = featuredRepos.map(name => originals.find(repo => repo.name === name)).filter(Boolean);
-                 renderRepos(selected.length ? selected : originals.slice(0, 8));
-                 repoStatus.innerHTML = '<i class="fas fa-check mr-2"></i>Live from github.com/eeumairali · original repositories only';
-             })
-             .catch(() => {
-                 repoStatus.innerHTML = '<i class="fas fa-bookmark mr-2"></i>Selected projects from github.com/eeumairali';
-             });
-
-    </script>
-
-    <!-- FAQ Structured Data — mirrors the visible FAQ section above -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What Python topics does Umair Ali teach?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Umair Ali teaches Python from beginner to advanced levels, including core syntax, object-oriented programming, data science with NumPy and Pandas, machine learning with Scikit-learn and TensorFlow, deep learning with PyTorch, web development with Django and Flask, computer vision, and automation scripting."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much do online Python tutoring sessions with Umair Ali cost?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Umair Ali offers a free 30-minute trial lesson with no payment required. Standard one-on-one sessions are $15 per hour. A package of 10 sessions costs $100 (effectively one session free). All sessions are conducted online via video call and are available to students worldwide."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does Umair Ali offer online Python tutoring to students worldwide?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Umair Ali provides online Python tutoring sessions worldwide via video call. He is flexible with time zones and has taught students from over 20 countries. Sessions are available in English, Urdu, or Punjabi."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What qualifications does Umair Ali have as a Python tutor?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Umair Ali holds an MS in Electrical Engineering and is currently pursuing a PhD in Electrical Engineering at the University of Gujrat, with research focused on computer vision and machine learning. He has 7+ years of Python programming experience, has taught 5,000+ lessons and completed 200+ projects with a 5.0-star rating from 43 reviews, and has published peer-reviewed research in Emerald's Sensor Review journal."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How can I book a Python tutoring session with Umair Ali?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You can book a session by emailing eeumairali@gmail.com with the subject 'Python Tutoring Booking'. A free 30-minute trial lesson is available with no payment required. Umair typically responds within one hour."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does Umair Ali teach Python to kids?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Umair Ali works as a Python teacher for kids as well as complete beginners, working professionals, and career switchers, offering one-to-one online lessons paced to each student's age and skill level. Lessons for kids use simple, hands-on examples and screen-sharing so they can code alongside their teacher in real time."
-          }
-        }
-      ]
+  function field() {
+    ctx.fillStyle = "#6b8f3e"; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = "rgba(255,255,255,.06)";
+    for (let i = 0; i < 40; i++) ctx.fillRect((i * 97) % W, (i * 53) % H, 26, 2);
+    ctx.fillStyle = "#8a6a3b"; ctx.fillRect(W - 130, 12, 110, 24); // the feed trough
+    ctx.fillStyle = "rgba(255,255,255,.85)"; ctx.font = "11px Inter, sans-serif"; ctx.fillText("feed trough", W - 108, 28);
+  }
+  function cow(o) {
+    ctx.save(); ctx.translate(o.x, o.y); ctx.rotate(o.a);
+    const lying = o.mode === "lying";
+    ctx.fillStyle = "rgba(0,0,0,.18)"; ctx.beginPath(); ctx.ellipse(3, 4, 30, lying ? 19 : 15, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = "#f5f1e8"; ctx.beginPath(); ctx.ellipse(0, 0, 28, lying ? 18 : 14, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = "#2b2420"; for (const [sx, sy] of o.spots) { ctx.beginPath(); ctx.ellipse(sx, sy, 7, 5, 0.4, 0, 7); ctx.fill(); }
+    const hx = o.mode === "grazing" ? 36 : 31; // the head reaches down to feed
+    ctx.fillStyle = "#e7dccb"; ctx.beginPath(); ctx.ellipse(hx, 0, 9, 7, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = "#2b2420"; ctx.fillRect(hx - 3, -9, 3, 4); ctx.fillRect(hx - 3, 5, 3, 4);
+    ctx.restore();
+  }
+  function step(dt) {
+    for (const o of cows) {
+      o.t -= dt;
+      if (o.t <= 0) {
+        const atTrough = o.y < 90 && o.x > W - 170;
+        o.mode = atTrough && Math.random() < 0.6 ? "grazing" : ["walking", "walking", "grazing", "standing", "lying"][Math.floor(Math.random() * 5)];
+        o.t = rnd(2.5, 6);
+        if (o.mode === "walking" && Math.random() < 0.35) o.a = Math.atan2(60 - o.y, W - 75 - o.x); // off to the trough
+      }
+      o.v += (SPEED[o.mode] - o.v) * Math.min(1, dt * 2);
+      if (o.mode === "walking") o.a += rnd(-0.6, 0.6) * dt;
+      o.x += Math.cos(o.a) * o.v * dt; o.y += Math.sin(o.a) * o.v * dt;
+      if (o.x < 45 || o.x > W - 45) { o.a = Math.PI - o.a; o.x = Math.max(45, Math.min(W - 45, o.x)); }
+      if (o.y < 70 || o.y > H - 45) { o.a = -o.a; o.y = Math.max(70, Math.min(H - 45, o.y)); }
+      o.trail.push([o.x, o.y]); if (o.trail.length > 140) o.trail.shift();
     }
-    </script>
+  }
+  function draw() {
+    field();
+    if (show.track) for (const o of cows) {
+      ctx.strokeStyle = o.c; ctx.globalAlpha = 0.6; ctx.lineWidth = 2; ctx.setLineDash([4, 4]);
+      ctx.beginPath(); o.trail.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.stroke();
+      ctx.setLineDash([]); ctx.globalAlpha = 1;
+    }
+    cows.forEach(cow);
+    ctx.font = "600 12px Inter, sans-serif";
+    for (const o of cows) {
+      const r = 38, conf = (0.86 + 0.1 * Math.abs(Math.sin(o.x / 50 + o.id))).toFixed(2), col = show.track ? o.c : "#ffffff";
+      if (show.detect) {
+        ctx.strokeStyle = col; ctx.lineWidth = 2; ctx.strokeRect(o.x - r, o.y - r, r * 2, r * 2);
+        const tag = (show.track ? `ID ${o.id} · ` : "cow ") + conf, w = ctx.measureText(tag).width + 10;
+        ctx.fillStyle = col; ctx.fillRect(o.x - r, o.y - r - 18, w, 18);
+        ctx.fillStyle = "#111"; ctx.fillText(tag, o.x - r + 5, o.y - r - 5);
+      }
+      if (show.behave) {
+        const t = LABEL[o.mode], w = ctx.measureText(t).width + 12;
+        ctx.fillStyle = "rgba(15,23,29,.82)"; ctx.fillRect(o.x - w / 2, o.y + r + 4, w, 18);
+        ctx.fillStyle = "#fff"; ctx.fillText(t, o.x - w / 2 + 6, o.y + r + 17);
+      }
+    }
+  }
+  document.querySelectorAll("[data-layer]").forEach((b) => b.addEventListener("click", () => {
+    const k = b.dataset.layer; show[k] = !show[k]; b.setAttribute("aria-pressed", show[k]);
+    if (still) draw();
+  }));
+  function frame(now) {
+    const dt = Math.min(0.05, (now - last) / 1000); last = now;
+    step(dt); draw(); requestAnimationFrame(frame);
+  }
+  if (still) { for (let i = 0; i < 200; i++) step(0.05); draw(); } // a still picture for people who turn motion off
+  else requestAnimationFrame(frame);
+})();
 
-    <!-- Lazy loading for images (when added) -->
-    <script>
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                        observer.unobserve(img);
-                    }
-                });
-            });
-
-            const images = document.querySelectorAll('img[data-src]');
-            images.forEach(img => imageObserver.observe(img));
-        }
-    </script>
-
-    <!-- Service Worker for PWA (optional) -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(registration => console.log('SW registered'))
-                    .catch(error => console.log('SW registration failed'));
-            });
-        }
-    </script>
+// the old page installed an offline cache that served itself first: remove it
+if ("serviceWorker" in navigator) navigator.serviceWorker.getRegistrations().then((rs) => rs.forEach((r) => r.unregister())).catch(() => {});
+</script>
 </body>
 </html>

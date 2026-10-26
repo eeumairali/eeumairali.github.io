@@ -1,22 +1,10 @@
 {
-  "name": "Umair Ali - Python Tutor & Machine Learning Instructor",
+  "name": "Umair Ali — PhD Researcher, Computer Vision",
   "short_name": "Umair Ali",
-  "description": "Expert Python tutor and PhD scholar specializing in Machine Learning, Data Science, and AI instruction",
+  "description": "PhD researcher in Electrical Engineering at the University of Gujrat: computer vision for precision livestock.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#1e3a8a",
-  "icons": [
-    {
-      "src": "/favicon-32x32.png",
-      "sizes": "32x32",
-      "type": "image/png"
-    },
-    {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
-    }
-  ],
-  "categories": ["education", "programming", "tutorial"]
+  "background_color": "#fbfaf7",
+  "theme_color": "#0f2a3a",
+  "icons": [{ "src": "/assets/umair-ali-logo.svg", "sizes": "any", "type": "image/svg+xml" }]
 }
