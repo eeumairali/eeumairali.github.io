@@ -11,4 +11,3 @@ precision livestock.
 Both pages are plain HTML and CSS with no build step. To add a photo, save it as `assets/umair.jpg` and follow the
 note next to the portrait in `index.html`.
 
-For Python lessons and teaching, see [umaircodelab.com](https://umaircodelab.com).

@@ -42,8 +42,7 @@
   "sameAs": [
     "https://www.linkedin.com/in/eeumairali",
     "https://github.com/eeumairali",
-    "https://www.researchgate.net/profile/Umair-Ali-35",
-    "https://umaircodelab.com"
+    "https://www.researchgate.net/profile/Umair-Ali-35"
   ]
 }
 </script>
@@ -139,7 +138,14 @@ section { padding: 56px 0 8px; scroll-margin-top: 60px; }
 @media (max-width: 860px) { .cols3 { grid-template-columns: 1fr; } }
 .cols3 h3 { font: 600 15px Inter, sans-serif; margin-bottom: 4px; }
 .cols3 p { margin: 0; color: var(--muted); font-size: 15px; }
-.stat { font: 600 28px Fraunces, Georgia, serif; color: var(--accent); }
+.projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+@media (max-width: 760px) { .projects { grid-template-columns: 1fr; } }
+.proj { display: flex; flex-direction: column; }
+.proj .tag { margin: 0 0 6px; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.proj h3 { font-size: 20px; }
+.proj p { color: var(--muted); font-size: 15px; margin: 8px 0 0; }
+.proj .pills { margin-bottom: 12px; }
+.proj > a { margin-top: auto; font-weight: 500; font-size: 15px; }
 .certs { columns: 2; column-gap: 28px; padding-left: 18px; margin: 0; color: var(--muted); font-size: 15px; }
 .certs li { break-inside: avoid; margin-bottom: 6px; }
 @media (max-width: 640px) { .certs { columns: 1; } }
@@ -158,10 +164,10 @@ footer { padding: 36px 16px 48px; text-align: center; color: var(--muted); font-
     <a class="brand" href="#top">Umair Ali</a>
     <nav aria-label="Sections">
       <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
       <a href="#publications">Publications</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
-      <a href="#teaching">Teaching</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="theme" type="button" id="theme" aria-label="Switch between light and dark">◐</button>
@@ -192,7 +198,7 @@ footer { padding: 36px 16px 48px; text-align: center; color: var(--muted); font-
     <div><b>2024–27</b><span>PhD, Electrical Engineering</span></div>
     <div><b>2</b><span>journal papers</span></div>
     <div><b>130+</b><span>ML &amp; software projects delivered</span></div>
-    <div><b>5,000+</b><span>hours of one-to-one teaching</span></div>
+    <div><b>7+</b><span>years building with Python</span></div>
   </div>
 
   <section id="research" aria-labelledby="research-h">
@@ -221,6 +227,55 @@ footer { padding: 36px 16px 48px; text-align: center; color: var(--muted); font-
         </div>
       </figure>
     </div>
+  </section>
+
+  <section id="projects" aria-labelledby="proj-h">
+    <div class="h2row"><h2 id="proj-h">Projects</h2><small><a href="https://github.com/eeumairali" target="_blank" rel="noopener">More on GitHub →</a></small></div>
+    <div class="projects">
+      <article class="card proj">
+        <p class="tag">PhD research · 2024 –</p>
+        <h3>Cow face detection with YOLOv8</h3>
+        <p>Fine-tuned YOLOv8 from COCO-pretrained weights on mixed cattle datasets to find cow faces in farm images – the first stage of identifying and monitoring individual animals.</p>
+        <ul class="pills"><li>YOLOv8</li><li>Transfer learning</li><li>PyTorch</li></ul>
+        <a href="https://www.researchgate.net/publication/390810418_Cow_Face_Detection_for_Precision_Livestock_Management_using_YOLOv8" target="_blank" rel="noopener">Paper →</a>
+      </article>
+      <article class="card proj">
+        <p class="tag">PhD research · ongoing</p>
+        <h3>Livestock tracking &amp; behaviour recognition</h3>
+        <p>From detections to identities to behaviour: following each animal across video frames with re-identification features, then classifying what it is doing for real-time welfare monitoring.</p>
+        <ul class="pills"><li>Multi-object tracking</li><li>ReID</li><li>Behaviour recognition</li></ul>
+      </article>
+      <article class="card proj">
+        <p class="tag">MS research · 2018 – 2020</p>
+        <h3>Underwater robot self-localisation</h3>
+        <p>A predictive-coding neural network (PC/BC-DIM) that fuses several sensors so an underwater robot can estimate where it is – published in <i>Sensor Review</i>.</p>
+        <ul class="pills"><li>Sensor fusion</li><li>Neural networks</li><li>Robotics</li></ul>
+        <a href="https://doi.org/10.1108/SR-03-2021-0104" target="_blank" rel="noopener">Paper →</a>
+      </article>
+      <article class="card proj">
+        <p class="tag">Software · 2026</p>
+        <h3>Interactive engineering &amp; AI labs</h3>
+        <p>Designed and built 35 browser-based labs – computer vision (YOLO, NMS, ReID, tracking), image processing, signals, control and a 3D robot simulator programmable in Python – running Python and C in WebAssembly.</p>
+        <ul class="pills"><li>Django</li><li>Pyodide</li><li>three.js</li><li>WebAssembly</li></ul>
+      </article>
+      <article class="card proj">
+        <p class="tag">Industry · 2021 – 2022</p>
+        <h3>Embedded HMI control system</h3>
+        <p>Two-way communication between a Raspberry Pi and embedded hardware over eRPC, with a PyQt5 operator interface – at Mezino Technologies.</p>
+        <ul class="pills"><li>Raspberry Pi</li><li>eRPC</li><li>PyQt5</li></ul>
+      </article>
+      <article class="card proj">
+        <p class="tag">BS final-year project · 2018</p>
+        <h3>Automated petrol-pump system</h3>
+        <p>An automated fuel-dispensing system designed and built as the final-year project of my BS in Electrical Engineering.</p>
+        <ul class="pills"><li>Embedded systems</li><li>Automation</li></ul>
+      </article>
+    </div>
+    <p class="muted" style="font-size:15px;margin-top:16px">Also on GitHub:
+      <a href="https://github.com/eeumairali/computervision" target="_blank" rel="noopener">computer-vision experiments</a> ·
+      <a href="https://github.com/eeumairali/AnimatedMaths" target="_blank" rel="noopener">animated maths</a> ·
+      <a href="https://github.com/eeumairali/django_chatbot" target="_blank" rel="noopener">Django chatbot</a> ·
+      <a href="https://github.com/eeumairali/Scratch-To-Tower-Defence" target="_blank" rel="noopener">tower-defence game in C#</a></p>
   </section>
 
   <section id="publications" aria-labelledby="pub-h">
@@ -266,8 +321,8 @@ footer { padding: 36px 16px 48px; text-align: center; color: var(--muted); font-
         <h3>Python &amp; MATLAB Developer (freelance)</h3><div class="where">Fiverr and self-employed · remote</div>
         <ul><li>100+ projects: data analysis and visualisation, automation and data pipelines, scientific and engineering computing.</li><li>Converting MATLAB code to Python for speed and maintainability.</li></ul></div></li>
       <li><div class="when">2022 – present</div><div>
-        <h3>Python &amp; Machine Learning Tutor</h3><div class="where">Preply and Umair Code Lab · online</div>
-        <p>One-to-one lessons from Python basics to data science, machine learning and web development, for students in 20+ countries.</p></div></li>
+        <h3>Python &amp; Machine Learning Tutor</h3><div class="where">Online</div>
+        <p>One-to-one teaching of Python, data science and machine learning.</p></div></li>
       <li><div class="when">2021 – 2022</div><div>
         <h3>Associate Engineer</h3><div class="where">Mezino Technologies · Lahore</div>
         <ul><li>Embedded systems for two-way communication and HMI control (Python, PyQt5, eRPC, Raspberry Pi).</li><li>Web scrapers that collected training data for ML models (Scrapy, Selenium, PostgreSQL, MongoDB).</li><li>Django web applications and Next.js front ends.</li></ul></div></li>
@@ -290,15 +345,6 @@ footer { padding: 36px 16px 48px; text-align: center; color: var(--muted); font-
         <h3>BS, Electrical Engineering</h3><div class="where">University of Management and Technology, Lahore</div>
         <p>Final-year project: an automated petrol-pump system.</p></div></li>
     </ol>
-  </section>
-
-  <section id="teaching" aria-labelledby="teach-h">
-    <div class="h2row"><h2 id="teach-h">Teaching &amp; open tools</h2><small><a href="https://umaircodelab.com" target="_blank" rel="noopener">umaircodelab.com →</a></small></div>
-    <div class="cols3">
-      <div class="card"><div class="stat">5,000+</div><h3>hours taught one-to-one</h3><p>Python, data science, machine learning and computer vision, rated 5.0 / 5 by students.</p></div>
-      <div class="card"><div class="stat">35</div><h3>interactive labs built</h3><p>I designed and coded a teaching platform where students practise in the browser: computer vision, image processing, signals, control, robotics and more.</p></div>
-      <div class="card"><div class="stat">YOLO → ReID</div><h3>my research, taught</h3><p>A Vision AI lab that explains attention, YOLO detection, NMS, re-identification and tracking step by step – the methods behind my PhD.</p></div>
-    </div>
   </section>
 
   <section id="skills" aria-labelledby="skills-h">
@@ -337,7 +383,7 @@ footer { padding: 36px 16px 48px; text-align: center; color: var(--muted); font-
   </section>
 </main>
 
-<footer>© Umair Ali · <a href="/cv.html">CV</a> · Looking for Python lessons? <a href="https://umaircodelab.com" target="_blank" rel="noopener">umaircodelab.com</a></footer>
+<footer>© Umair Ali · <a href="/cv.html">CV</a> · <a href="https://github.com/eeumairali">GitHub</a></footer>
 
 <script>
 // light / dark, remembered on this device
