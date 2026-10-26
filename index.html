@@ -126,14 +126,14 @@ section { padding: 56px 0 8px; scroll-margin-top: 60px; }
 .pub .actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .pub .actions .btn { padding: 5px 11px; font-size: 13px; }
 .tl { list-style: none; margin: 0; padding: 0; }
-.tl li { display: grid; grid-template-columns: 150px 1fr; gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--line); }
-.tl li:last-child { border-bottom: 0; }
+.tl > li { display: grid; grid-template-columns: 150px 1fr; gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.tl > li:last-child { border-bottom: 0; }
 .tl .when { color: var(--muted); font-size: 14px; padding-top: 2px; }
 .tl h3 { font: 600 17px Inter, sans-serif; }
 .tl .where { color: var(--accent); font-weight: 500; font-size: 15px; }
 .tl p, .tl ul { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
 .tl ul { padding-left: 18px; }
-@media (max-width: 640px) { .tl li { grid-template-columns: 1fr; gap: 2px; } .pub { grid-template-columns: 1fr; gap: 4px; } }
+@media (max-width: 640px) { .tl > li { grid-template-columns: 1fr; gap: 2px; } .pub { grid-template-columns: 1fr; gap: 4px; } }
 .cols3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 @media (max-width: 860px) { .cols3 { grid-template-columns: 1fr; } }
 .cols3 h3 { font: 600 15px Inter, sans-serif; margin-bottom: 4px; }
@@ -154,6 +154,57 @@ section { padding: 56px 0 8px; scroll-margin-top: 60px; }
 .contact .links { justify-content: center; }
 footer { padding: 36px 16px 48px; text-align: center; color: var(--muted); font-size: 13px; }
 .theme { border: 0; background: none; color: var(--muted); cursor: pointer; font-size: 18px; padding: 4px; }
+.print-only { display: none; }
+
+/* Save as PDF: the same page, printed as a compact CV */
+@media print {
+  @page { size: A4; margin: 13mm 14mm; }
+  :root, :root[data-theme="dark"] { --bg: #fff; --card: #fff; --ink: #14212b; --muted: #4b5a65; --line: #d9d7d0; --accent: #0f6e6a; --accent-soft: #fff; --shadow: none; }
+  body { font-size: 9.5pt; line-height: 1.45; background: #fff; }
+  .top, .skip, .portrait, .demo, .links .btn, .actions, .contact .links, footer, .pills, .theme { display: none !important; }
+  .print-only { display: block; }
+  .wrap { max-width: none; padding: 0; }
+  .hero { display: block; padding: 0 0 6px; border-bottom: 2px solid var(--ink); }
+  .hero h1 { font-size: 24pt; }
+  .eyebrow { margin: 0 0 2px; }
+  .lead { font-size: 10pt; max-width: none; margin-top: 6px; }
+  .facts { display: none; }
+  section { padding: 10px 0 0; }
+  .h2row { margin-bottom: 6px; padding-bottom: 3px; }
+  .h2row h2 { font-size: 13pt; }
+  .h2row small { display: none; }
+  .grid2, .projects, .cols3 { display: block; }
+  .card { border: 0; padding: 0; border-radius: 0; }
+  .proj { display: block; margin-bottom: 6px; break-inside: avoid; }
+  .proj h3 { font-size: 10.5pt; display: inline; }
+  .proj .tag { display: inline; margin-left: 6px; font-size: 8pt; }
+  .proj p { margin: 1px 0 0; font-size: 9.5pt; }
+  .proj > a { display: none; }
+  .steps { margin-top: 4px; gap: 3px; }
+  .steps li::before { width: 18px; height: 18px; font-size: 9pt; }
+  .pubs { padding: 0; }
+  .pub { padding: 5px 0; grid-template-columns: 40px 1fr; gap: 8px; break-inside: avoid; }
+  .pub h3 { font-size: 10.5pt; }
+  .pub .year { font-size: 10pt; }
+  .steps { display: none; }
+  p.muted, .muted { font-size: 9pt !important; margin-top: 4px !important; }
+  #research .grid2 > div > p:first-child { margin-bottom: 0; }
+  h3[style] { margin: 8px 0 2px !important; font-size: 10pt !important; }
+  .pub .about { display: none; }
+  .tl > li { grid-template-columns: 120px 1fr; gap: 10px; padding: 5px 0; break-inside: avoid; }
+  .tl .when { font-size: 8.5pt; }
+  .tl h3 { font-size: 10pt; display: inline; }
+  .tl .where { display: inline; margin-left: 6px; font-size: 9.5pt; }
+  .tl p, .tl ul { margin-top: 1px; font-size: 9pt; }
+  .cols3 .card { margin-bottom: 4px; }
+  .cols3 h3 { display: inline; font-size: 9.5pt; }
+  .cols3 h3::after { content: ": "; }
+  .cols3 p { display: inline; font-size: 9pt; }
+  .certs { columns: 1; font-size: 9pt; }
+  .contact { text-align: left; padding: 0; }
+  .contact h2, .contact > p.muted:first-of-type { display: none; }
+  a { color: var(--ink); text-decoration: none; }
+}
 </style>
 </head>
 <body>
@@ -171,7 +222,7 @@ footer { padding: 36px 16px 48px; text-align: center; color: var(--muted); font-
       <a href="#contact">Contact</a>
     </nav>
     <button class="theme" type="button" id="theme" aria-label="Switch between light and dark">◐</button>
-    <a class="btn btn-main" href="/cv.html">CV</a>
+    <button class="btn btn-main" type="button" data-print>⬇ PDF</button>
   </div>
 </header>
 
@@ -180,11 +231,11 @@ footer { padding: 36px 16px 48px; text-align: center; color: var(--muted); font-
     <div>
       <p class="eyebrow">PhD Researcher · Electrical Engineering</p>
       <h1>Umair Ali</h1>
+      <p class="print-only" style="margin:4px 0 0;font-size:9pt;color:#4b5a65">eeumairali@gmail.com · eeumairali.github.io · linkedin.com/in/eeumairali · github.com/eeumairali · Gujrat, Pakistan</p>
       <p class="lead">I build <b>computer vision systems that watch over livestock</b>: detecting each animal, following it over time and recognising what it is doing, so farmers can spot illness, stress and feeding problems early.
         PhD at the <b>Intelligent Systems Lab, University of Gujrat</b>, supervised by Dr. Wasif Muhammad.</p>
       <div class="links">
         <a class="btn btn-main" href="mailto:eeumairali@gmail.com">✉ eeumairali@gmail.com</a>
-        <a class="btn" href="/cv.html">📄 CV</a>
         <a class="btn" href="https://www.linkedin.com/in/eeumairali" rel="me noopener" target="_blank">LinkedIn</a>
         <a class="btn" href="https://github.com/eeumairali" rel="me noopener" target="_blank">GitHub</a>
         <a class="btn" href="https://www.researchgate.net/profile/Umair-Ali-35" rel="me noopener" target="_blank">ResearchGate</a>
@@ -373,7 +424,7 @@ footer { padding: 36px 16px 48px; text-align: center; color: var(--muted); font-
       <p class="muted">Open to research collaboration, research visits and postdoctoral positions in computer vision and agricultural AI.</p>
       <div class="links">
         <a class="btn btn-main" href="mailto:eeumairali@gmail.com">✉ eeumairali@gmail.com</a>
-        <a class="btn" href="/cv.html">📄 Download CV</a>
+        <button class="btn" type="button" data-print>⬇ Save as PDF</button>
         <a class="btn" href="https://www.linkedin.com/in/eeumairali" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn" href="https://github.com/eeumairali" target="_blank" rel="noopener">GitHub</a>
         <a class="btn" href="https://www.researchgate.net/profile/Umair-Ali-35" target="_blank" rel="noopener">ResearchGate</a>
@@ -383,7 +434,7 @@ footer { padding: 36px 16px 48px; text-align: center; color: var(--muted); font-
   </section>
 </main>
 
-<footer>© Umair Ali · <a href="/cv.html">CV</a> · <a href="https://github.com/eeumairali">GitHub</a></footer>
+<footer>© Umair Ali · <a href="https://github.com/eeumairali">GitHub</a> · <a href="https://www.linkedin.com/in/eeumairali">LinkedIn</a></footer>
 
 <script>
 // light / dark, remembered on this device
@@ -396,6 +447,9 @@ footer { padding: 36px 16px 48px; text-align: center; color: var(--muted); font-
     try { localStorage.setItem(key, root.dataset.theme); } catch (e) {}
   });
 })();
+
+// Save as PDF: the browser's print dialog, with the print layout above
+document.querySelectorAll("[data-print]").forEach((b) => b.addEventListener("click", () => window.print()));
 
 // copy a citation
 document.querySelectorAll("[data-cite]").forEach((b) => b.addEventListener("click", async () => {
